@@ -40,7 +40,7 @@ namespace GelatoUI
         private void SelectButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderBasket ob = new OrderBasket();
+            OrderBasketForm ob = new OrderBasketForm();
             ob.ShowDialog();
         }
     }
