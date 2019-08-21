@@ -1,6 +1,6 @@
 ﻿namespace GelatoUI
 {
-    partial class OrderBasket
+    partial class OrderBasketForm
     {
         /// <summary>
         /// Required designer variable.
