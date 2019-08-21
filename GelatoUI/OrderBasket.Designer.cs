@@ -38,7 +38,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.checkOutButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -136,14 +136,14 @@
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button2
+            // removeButton
             // 
-            this.button2.Location = new System.Drawing.Point(659, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 19);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.removeButton.Location = new System.Drawing.Point(659, 152);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(89, 19);
+            this.removeButton.TabIndex = 13;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
             // clearButton
             // 
@@ -249,7 +249,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.checkOutButton);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
@@ -280,7 +280,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button checkOutButton;
         private System.Windows.Forms.Button cancelButton;
