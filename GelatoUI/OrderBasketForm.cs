@@ -79,7 +79,6 @@ namespace GelatoUI
 
                 basketListView.Items.Add(item);
             }
-
             //Using Datagrid and databinding to display basket content
             //Note: The nasty kludge of setting DataSource to null to
             //ensure it refreshes and displays the current basket state
@@ -141,7 +140,7 @@ namespace GelatoUI
                 return; //No items selected
             ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].SubItems[0].Text));
             BasketItemsToListView();
-            removeButton.Enabled = false;
+            removeButton.Enabled = false; //currently disables after deleting an item even if other items remain
         }
 
     }
