@@ -62,6 +62,8 @@
             this.numOfItems = new System.Windows.Forms.TextBox();
             this.totalBox = new System.Windows.Forms.TextBox();
             this.discTotal = new System.Windows.Forms.TextBox();
+            this.discLabel = new System.Windows.Forms.Label();
+            this.discValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quantityCounter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,9 +90,9 @@
             this.discountLabel.AutoSize = true;
             this.discountLabel.Location = new System.Drawing.Point(263, 35);
             this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(49, 13);
+            this.discountLabel.Size = new System.Drawing.Size(95, 13);
             this.discountLabel.TabIndex = 4;
-            this.discountLabel.Text = "Discount";
+            this.discountLabel.Text = "Discount Available";
             // 
             // descLabel
             // 
@@ -204,6 +206,7 @@
             this.removeButton.TabIndex = 13;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // clearButton
             // 
@@ -242,6 +245,7 @@
             this.exitButton.TabIndex = 17;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // numProductsLabel
             // 
@@ -307,7 +311,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 9);
+            this.label2.Location = new System.Drawing.Point(107, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 27;
@@ -342,11 +346,32 @@
             this.discTotal.TabIndex = 31;
             this.discTotal.TextChanged += new System.EventHandler(this.DiscTotal_TextChanged);
             // 
+            // discLabel
+            // 
+            this.discLabel.AutoSize = true;
+            this.discLabel.Location = new System.Drawing.Point(200, 9);
+            this.discLabel.Name = "discLabel";
+            this.discLabel.Size = new System.Drawing.Size(125, 13);
+            this.discLabel.TabIndex = 32;
+            this.discLabel.Text = "Customer Discount       %";
+            this.discLabel.UseMnemonic = false;
+            // 
+            // discValue
+            // 
+            this.discValue.AutoSize = true;
+            this.discValue.Location = new System.Drawing.Point(322, 9);
+            this.discValue.Name = "discValue";
+            this.discValue.Size = new System.Drawing.Size(35, 13);
+            this.discValue.TabIndex = 33;
+            this.discValue.Text = "label3";
+            // 
             // OrderBasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.discValue);
+            this.Controls.Add(this.discLabel);
             this.Controls.Add(this.discTotal);
             this.Controls.Add(this.totalBox);
             this.Controls.Add(this.numOfItems);
@@ -418,5 +443,7 @@
         private System.Windows.Forms.TextBox numOfItems;
         private System.Windows.Forms.TextBox totalBox;
         private System.Windows.Forms.TextBox discTotal;
+        private System.Windows.Forms.Label discLabel;
+        private System.Windows.Forms.Label discValue;
     }
 }

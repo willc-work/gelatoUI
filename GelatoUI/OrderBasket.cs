@@ -70,6 +70,17 @@ namespace GelatoUI
             }
         }
 
+        /// Entirely removes the quantity from a product
+        public void RemoveProduct(int productNumber)
+        {
+            BasketItem specifiedItem;
+            if (FindBasketItemByProductNumber(productNumber, out specifiedItem))
+            {
+                //specifiedItem.RemoveItem(specifiedItem.Quantity);
+                this.BasketItems.Remove(specifiedItem);
+            }
+        }
+
         private bool FindBasketItemByProductNumber(int productNumber, out BasketItem foundItem)
         {
             foundItem = null;

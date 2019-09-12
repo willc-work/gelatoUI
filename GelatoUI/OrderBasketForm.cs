@@ -13,7 +13,7 @@ namespace GelatoUI
     public partial class OrderBasketForm : Form
     {
         Customer cust;
-        OrderBasket ob;
+        public static OrderBasket ob;
         public OrderBasketForm(Customer customer)
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace GelatoUI
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Product> pl = db.Products.ToList();
             label2.Text = cust.CustomerName;
+            discValue.Text = cust.Discount.ToString();
             productNameBox.DataSource = pl;
             productNameBox.DisplayMember = "ProductName";
             checkOutButton.Enabled = false;
@@ -62,14 +63,6 @@ namespace GelatoUI
             totalBox.Text = string.Format("{0:C2}", ob.BasketTotal);
             discTotal.Text = string.Format("{0:C2}", ob.BasketTotal);
 
-            //if (ob.NumberOfItems == 0)
-            //{ //set buttons to disabled if nothing in the basket
-            //    checkOutButton.Enabled = false;
-            //    clearButton.Enabled = false;
-            //    removeButton.Enabled = false;
-            //    return;
-            //}
-
             //Using ListView Control to display basket contents
             foreach (BasketItem bItem in ob.BasketItems)
             {
@@ -80,7 +73,7 @@ namespace GelatoUI
                     bItem.Quantity.ToString(),
                     bItem.Price.ToString("C2"),
                     bItem.totalValueOfBasketItem.ToString("C2"),
-                    bItem.RecommendedRetailPrice.ToString(),
+                    bItem.RecommendedRetailPrice.ToString("C2"),
                     bItem.Description
                 });
 
@@ -95,6 +88,7 @@ namespace GelatoUI
 
             clearButton.Enabled = true;
             checkOutButton.Enabled = true;
+            removeButton.Enabled = true;
 
         }
 
@@ -115,12 +109,12 @@ namespace GelatoUI
 
         private void ClearBasket()
         {
-        //    orderBasket.ClearBasket();
-         //   txtTotal.Clear();
-         //   numberOfItemsTextBox.Clear();
-         //   BasketItemsToListView();
-          //  deliverRadioButton.Checked = false;
-          //  collectRadioButton.Checked = false;
+          //  ClearBasket();
+            totalBox.Clear();
+            numOfItems.Clear();
+            BasketItemsToListView();
+            //  deliverRadioButton.Checked = false;
+            //  collectRadioButton.Checked = false;
         }
 
         private void ProductNameBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -128,12 +122,27 @@ namespace GelatoUI
             priceTextBox.Text = string.Format("{0:C}", ((Product)productNameBox.SelectedItem).Price);
             descriptionTextBox.Text = ((Product)productNameBox.SelectedItem).Description;
             var discount = (((Product)productNameBox.SelectedItem).Price) * cust.Discount/100;
-            discountBox.Text = discount.ToString();
+            discountBox.Text = discount.ToString("C2");
         }
 
         private void DiscTotal_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (basketListView.SelectedItems.Count <= 0)
+                return; //No items selected
+            ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].SubItems[0].Text));
+            BasketItemsToListView();
+            removeButton.Enabled = false;
+        }
+
     }
 }

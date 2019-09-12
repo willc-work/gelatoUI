@@ -53,6 +53,7 @@ namespace GelatoUI
             List<Customer> cl = db.Customers.ToList();
             custListBox.DataSource = cl;
             custListBox.DisplayMember ="CustomerName";
+            takeNewOrderButton.Enabled = false;
 
         }
 
@@ -70,19 +71,22 @@ namespace GelatoUI
             label4.Text = customer.AddressLine1;
             label10.Text = customer.AddressLine2;
             label11.Text = customer.AddressLine3;
+            label3.Text = customer.Postcode;
             label5.Text = customer.Phone;
             label6.Text = customer.Email;
             label7.Text = customer.Discount.ToString();
             label8.Text = customer.SecurityQuestion;
             label9.Text = customer.SecurityQuestionAnswer;
-            //  takeOrderButton.Enabled = true;
+            takeNewOrderButton.Enabled = true;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void TakeNewOrderButton_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
             OrderBasketForm ob = new OrderBasketForm((Customer)custListBox.SelectedItem);
-            ob.ShowDialog();
+            ob.Show();
+            this.Hide();
+            //   ob.ShowDialog();
+            //   ob.CurrentCustomer = (Customer)custListBox.SelectedItem;
         }
     }
 }
