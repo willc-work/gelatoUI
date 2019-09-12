@@ -198,7 +198,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Gelato2UEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Gelato2UEntitiesA" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
@@ -221,7 +221,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Gelato2UModelStoreContainer" CdmEntityContainer="Gelato2UEntities">
+        <EntityContainerMapping StorageEntityContainer="Gelato2UModelStoreContainer" CdmEntityContainer="Gelato2UEntitiesA">
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="Gelato2UModel.Customer">
               <MappingFragment StoreEntitySet="Customers">

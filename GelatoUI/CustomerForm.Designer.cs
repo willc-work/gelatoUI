@@ -39,13 +39,20 @@ namespace GelatoUI
             this.custDiscLabel = new System.Windows.Forms.Label();
             this.secQuestLabel = new System.Windows.Forms.Label();
             this.secAnswerLabek = new System.Windows.Forms.Label();
-            this.customerListBox = new System.Windows.Forms.ListBox();
             this.selectButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.addNewCustButton = new System.Windows.Forms.Button();
-            this.custListView = new System.Windows.Forms.ListView();
-            this.CustomerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CustomerNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.custListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // custNumLabel
@@ -56,6 +63,7 @@ namespace GelatoUI
             this.custNumLabel.Size = new System.Drawing.Size(91, 13);
             this.custNumLabel.TabIndex = 0;
             this.custNumLabel.Text = "Customer Number";
+            this.custNumLabel.Click += new System.EventHandler(this.CustNumLabel_Click);
             // 
             // custNameLabel
             // 
@@ -129,29 +137,13 @@ namespace GelatoUI
             this.secAnswerLabek.TabIndex = 16;
             this.secAnswerLabek.Text = "Security Answer";
             // 
-            // customerListBox
-            // 
-            this.customerListBox.FormattingEnabled = true;
-            this.customerListBox.Items.AddRange(new object[] {
-            "Fred Smith",
-            "Hoffams Confectioners",
-            "Marios Ice Cream Factory",
-            "Patisserie Valerie",
-            "Slatterys",
-            "The Cake Factory"});
-            this.customerListBox.Location = new System.Drawing.Point(12, 25);
-            this.customerListBox.Name = "customerListBox";
-            this.customerListBox.Size = new System.Drawing.Size(263, 355);
-            this.customerListBox.Sorted = true;
-            this.customerListBox.TabIndex = 17;
-            // 
             // selectButton
             // 
             this.selectButton.Location = new System.Drawing.Point(12, 398);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(75, 23);
+            this.selectButton.Size = new System.Drawing.Size(92, 23);
             this.selectButton.TabIndex = 18;
-            this.selectButton.Text = "Select";
+            this.selectButton.Text = "Select Customer";
             this.selectButton.UseVisualStyleBackColor = true;
             this.selectButton.Click += new System.EventHandler(this.SelectButton_Click);
             // 
@@ -175,40 +167,126 @@ namespace GelatoUI
             this.addNewCustButton.UseVisualStyleBackColor = true;
             this.addNewCustButton.Click += new System.EventHandler(this.AddNewCustButton_Click);
             // 
-            // custListView
+            // custListBox
             // 
-            this.custListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CustomerName,
-            this.CustomerNumber});
-            this.custListView.HideSelection = false;
-            this.custListView.Location = new System.Drawing.Point(482, 31);
-            this.custListView.Name = "custListView";
-            this.custListView.Size = new System.Drawing.Size(282, 349);
-            this.custListView.TabIndex = 21;
-            this.custListView.UseCompatibleStateImageBehavior = false;
-            this.custListView.View = System.Windows.Forms.View.Details;
-            this.custListView.SelectedIndexChanged += new System.EventHandler(this.CustListView_SelectedIndexChanged);
+            this.custListBox.FormattingEnabled = true;
+            this.custListBox.Location = new System.Drawing.Point(12, 12);
+            this.custListBox.Name = "custListBox";
+            this.custListBox.Size = new System.Drawing.Size(263, 368);
+            this.custListBox.TabIndex = 22;
+            this.custListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
-            // CustomerName
+            // label1
             // 
-            this.CustomerName.Text = "Customer Name";
-            this.CustomerName.Width = 166;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(537, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.Label1);
             // 
-            // CustomerNumber
+            // label2
             // 
-            this.CustomerNumber.Text = "Customer No.";
-            this.CustomerNumber.Width = 100;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(537, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(537, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(537, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "label3";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(537, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(537, 222);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(537, 267);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(537, 313);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(537, 362);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "label9";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(530, 409);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(213, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Take New Order";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.custListView);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.custListBox);
             this.Controls.Add(this.addNewCustButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.selectButton);
-            this.Controls.Add(this.customerListBox);
             this.Controls.Add(this.secAnswerLabek);
             this.Controls.Add(this.secQuestLabel);
             this.Controls.Add(this.custDiscLabel);
@@ -237,12 +315,19 @@ namespace GelatoUI
         private System.Windows.Forms.Label custDiscLabel;
         private System.Windows.Forms.Label secQuestLabel;
         private System.Windows.Forms.Label secAnswerLabek;
-        private System.Windows.Forms.ListBox customerListBox;
         private Button selectButton;
         private Button clearButton;
         private Button addNewCustButton;
-        private ListView custListView;
-        private ColumnHeader CustomerName;
-        private ColumnHeader CustomerNumber;
+        private ListBox custListBox;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Button button1;
     }
 }

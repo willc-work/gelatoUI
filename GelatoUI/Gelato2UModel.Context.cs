@@ -13,10 +13,10 @@ namespace GelatoUI
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Gelato2UEntities : DbContext
+    public partial class Gelato2UEntitiesA : DbContext
     {
-        public Gelato2UEntities()
-            : base("name=Gelato2UEntities")
+        public Gelato2UEntitiesA()
+            : base("name=Gelato2UEntitiesA")
         {
         }
     

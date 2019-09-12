@@ -49,6 +49,7 @@
             this.discTotalLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,9 +131,9 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 156);
+            this.listView1.Location = new System.Drawing.Point(522, 253);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(622, 237);
+            this.listView1.Size = new System.Drawing.Size(148, 86);
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -234,11 +235,21 @@
             this.numericUpDown1.Size = new System.Drawing.Size(50, 20);
             this.numericUpDown1.TabIndex = 24;
             // 
-            // OrderBasket
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(27, 152);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(453, 225);
+            this.listBox1.TabIndex = 25;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            // 
+            // OrderBasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.discTotalLabel);
@@ -260,7 +271,7 @@
             this.Controls.Add(this.discountLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.productLabel);
-            this.Name = "OrderBasket";
+            this.Name = "OrderBasketForm";
             this.Text = "OrderBasket";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -291,5 +302,6 @@
         private System.Windows.Forms.Label discTotalLabel;
         private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
