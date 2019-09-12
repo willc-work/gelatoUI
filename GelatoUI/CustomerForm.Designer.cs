@@ -43,6 +43,9 @@ namespace GelatoUI
             this.selectButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.addNewCustButton = new System.Windows.Forms.Button();
+            this.custListView = new System.Windows.Forms.ListView();
+            this.CustomerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CustomerNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // custNumLabel
@@ -172,11 +175,36 @@ namespace GelatoUI
             this.addNewCustButton.UseVisualStyleBackColor = true;
             this.addNewCustButton.Click += new System.EventHandler(this.AddNewCustButton_Click);
             // 
+            // custListView
+            // 
+            this.custListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CustomerName,
+            this.CustomerNumber});
+            this.custListView.HideSelection = false;
+            this.custListView.Location = new System.Drawing.Point(482, 31);
+            this.custListView.Name = "custListView";
+            this.custListView.Size = new System.Drawing.Size(282, 349);
+            this.custListView.TabIndex = 21;
+            this.custListView.UseCompatibleStateImageBehavior = false;
+            this.custListView.View = System.Windows.Forms.View.Details;
+            this.custListView.SelectedIndexChanged += new System.EventHandler(this.CustListView_SelectedIndexChanged);
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.Text = "Customer Name";
+            this.CustomerName.Width = 166;
+            // 
+            // CustomerNumber
+            // 
+            this.CustomerNumber.Text = "Customer No.";
+            this.CustomerNumber.Width = 100;
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.custListView);
             this.Controls.Add(this.addNewCustButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.selectButton);
@@ -213,5 +241,8 @@ namespace GelatoUI
         private Button selectButton;
         private Button clearButton;
         private Button addNewCustButton;
+        private ListView custListView;
+        private ColumnHeader CustomerName;
+        private ColumnHeader CustomerNumber;
     }
 }
