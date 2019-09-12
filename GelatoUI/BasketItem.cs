@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 
 namespace GelatoUI
 {
-    class BasketItem
+    public class BasketItem
     {
-        private String productNumber;
-        private String productName;
-        private Decimal price;
-        private Decimal recommendedRetailPrice;
-        private int quantity;
-        private String description;
-        private String totalValueOfBasketItem;
 
-        public BasketItem(string productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description, string totalValueOfBasketItem)
+        public BasketItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
             this.ProductNumber = productNumber;
             this.ProductName = productName;
@@ -26,18 +19,55 @@ namespace GelatoUI
             this.Description = description;
         }
 
-        public string ProductNumber { get => productNumber; set => productNumber = value; }
-        public string ProductName { get => productName; set => productName = value; }
-        public decimal Price { get => price; set => price = value; }
-        public decimal RecommendedRetailPrice { get => recommendedRetailPrice; set => recommendedRetailPrice = value; }
-        public int Quantity { get => quantity; set => quantity = value; }
-        public string Description { get => description; set => description = value; }
-        public string TotalValueOfBasketItem { get => totalValueOfBasketItem; set => totalValueOfBasketItem = value; }
+        public int ProductNumber { get; set; }
 
-        private void totalValue()
+        public string ProductName
         {
-            var totalPrice = price * quantity;
-
+            get; private set;
         }
+
+        private decimal price;
+        public decimal Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                if (value >= 0)
+                    price = value;
+            }
+        }
+        public decimal RecommendedRetailPrice { get; set; }
+
+        int quantity;
+        public int Quantity
+        {
+            get { return quantity; }
+            set
+            {
+                if (value >= 0)
+                    quantity = value;
+            }
+        }
+        public string Description { get; set; }
+        public decimal totalValueOfBasketItem
+        {
+            get
+            {
+                return Price * quantity;
+            }
+        }
+        public int IncreaseQuantity(int quantity)
+        {
+            return Quantity += quantity;
+        }
+
+        public int DencreaseQuantity(int quantity)
+        {
+            return Quantity -= quantity;
+        }
+
     }
 }

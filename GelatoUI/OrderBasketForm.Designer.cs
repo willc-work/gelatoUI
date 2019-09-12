@@ -33,11 +33,18 @@
             this.discountLabel = new System.Windows.Forms.Label();
             this.descLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.discountBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
+            this.productNameBox = new System.Windows.Forms.ComboBox();
+            this.basketListView = new System.Windows.Forms.ListView();
+            this.prodNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prodName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rrp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.removeButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.checkOutButton = new System.Windows.Forms.Button();
@@ -48,9 +55,14 @@
             this.totalLabel = new System.Windows.Forms.Label();
             this.discTotalLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.quantityCounter = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numOfProducts = new System.Windows.Forms.TextBox();
+            this.numOfItems = new System.Windows.Forms.TextBox();
+            this.totalBox = new System.Windows.Forms.TextBox();
+            this.discTotal = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityCounter)).BeginInit();
             this.SuspendLayout();
             // 
             // productLabel
@@ -97,45 +109,85 @@
             this.addButton.TabIndex = 7;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // textBox1
+            // discountBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.discountBox.Location = new System.Drawing.Point(266, 61);
+            this.discountBox.Name = "discountBox";
+            this.discountBox.Size = new System.Drawing.Size(100, 20);
+            this.discountBox.TabIndex = 8;
             // 
-            // textBox2
+            // priceTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(151, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.priceTextBox.Location = new System.Drawing.Point(151, 61);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.priceTextBox.TabIndex = 9;
             // 
-            // richTextBox1
+            // descriptionTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(384, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(172, 67);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.descriptionTextBox.Location = new System.Drawing.Point(384, 61);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(172, 67);
+            this.descriptionTextBox.TabIndex = 10;
+            this.descriptionTextBox.Text = "";
             // 
-            // comboBox1
+            // productNameBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.productNameBox.FormattingEnabled = true;
+            this.productNameBox.Location = new System.Drawing.Point(12, 60);
+            this.productNameBox.Name = "productNameBox";
+            this.productNameBox.Size = new System.Drawing.Size(121, 21);
+            this.productNameBox.TabIndex = 11;
+            this.productNameBox.SelectedIndexChanged += new System.EventHandler(this.ProductNameBox_SelectedIndexChanged_1);
             // 
-            // listView1
+            // basketListView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(522, 253);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(148, 86);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.basketListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.prodNumber,
+            this.prodName,
+            this.quantity,
+            this.price,
+            this.total,
+            this.rrp,
+            this.desc});
+            this.basketListView.HideSelection = false;
+            this.basketListView.Location = new System.Drawing.Point(32, 152);
+            this.basketListView.Name = "basketListView";
+            this.basketListView.Size = new System.Drawing.Size(602, 225);
+            this.basketListView.TabIndex = 12;
+            this.basketListView.UseCompatibleStateImageBehavior = false;
+            this.basketListView.View = System.Windows.Forms.View.Details;
+            // 
+            // prodNumber
+            // 
+            this.prodNumber.Text = "Product Number";
+            // 
+            // prodName
+            // 
+            this.prodName.Text = "Product Name";
+            // 
+            // quantity
+            // 
+            this.quantity.Tag = "test";
+            this.quantity.Text = "Quantity";
+            // 
+            // price
+            // 
+            this.price.Text = "Price";
+            // 
+            // total
+            // 
+            this.total.Text = "Total";
+            // 
+            // rrp
+            // 
+            this.rrp.Text = "RRP";
+            // 
+            // desc
+            // 
+            this.desc.Text = "Description";
             // 
             // removeButton
             // 
@@ -154,6 +206,7 @@
             this.clearButton.TabIndex = 14;
             this.clearButton.Text = "Clear Basket";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // checkOutButton
             // 
@@ -186,7 +239,7 @@
             // numProductsLabel
             // 
             this.numProductsLabel.AutoSize = true;
-            this.numProductsLabel.Location = new System.Drawing.Point(12, 419);
+            this.numProductsLabel.Location = new System.Drawing.Point(29, 394);
             this.numProductsLabel.Name = "numProductsLabel";
             this.numProductsLabel.Size = new System.Drawing.Size(80, 13);
             this.numProductsLabel.TabIndex = 18;
@@ -195,7 +248,7 @@
             // numItemsLabel
             // 
             this.numItemsLabel.AutoSize = true;
-            this.numItemsLabel.Location = new System.Drawing.Point(162, 422);
+            this.numItemsLabel.Location = new System.Drawing.Point(148, 395);
             this.numItemsLabel.Name = "numItemsLabel";
             this.numItemsLabel.Size = new System.Drawing.Size(64, 13);
             this.numItemsLabel.TabIndex = 19;
@@ -204,7 +257,7 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(304, 419);
+            this.totalLabel.Location = new System.Drawing.Point(263, 395);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(31, 13);
             this.totalLabel.TabIndex = 20;
@@ -213,7 +266,7 @@
             // discTotalLabel
             // 
             this.discTotalLabel.AutoSize = true;
-            this.discTotalLabel.Location = new System.Drawing.Point(425, 419);
+            this.discTotalLabel.Location = new System.Drawing.Point(353, 397);
             this.discTotalLabel.Name = "discTotalLabel";
             this.discTotalLabel.Size = new System.Drawing.Size(88, 13);
             this.discTotalLabel.TabIndex = 21;
@@ -228,29 +281,71 @@
             this.quantityLabel.TabIndex = 22;
             this.quantityLabel.Text = "Quantity";
             // 
-            // numericUpDown1
+            // quantityCounter
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(564, 62);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(50, 20);
-            this.numericUpDown1.TabIndex = 24;
+            this.quantityCounter.Location = new System.Drawing.Point(564, 62);
+            this.quantityCounter.Name = "quantityCounter";
+            this.quantityCounter.Size = new System.Drawing.Size(50, 20);
+            this.quantityCounter.TabIndex = 24;
             // 
-            // listBox1
+            // label1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(27, 152);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(453, 225);
-            this.listBox1.TabIndex = 25;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Customer Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(132, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "label2";
+            // 
+            // numOfProducts
+            // 
+            this.numOfProducts.Location = new System.Drawing.Point(40, 415);
+            this.numOfProducts.Name = "numOfProducts";
+            this.numOfProducts.Size = new System.Drawing.Size(69, 20);
+            this.numOfProducts.TabIndex = 28;
+            // 
+            // numOfItems
+            // 
+            this.numOfItems.Location = new System.Drawing.Point(151, 415);
+            this.numOfItems.Name = "numOfItems";
+            this.numOfItems.Size = new System.Drawing.Size(84, 20);
+            this.numOfItems.TabIndex = 29;
+            // 
+            // totalBox
+            // 
+            this.totalBox.Location = new System.Drawing.Point(266, 415);
+            this.totalBox.Name = "totalBox";
+            this.totalBox.Size = new System.Drawing.Size(71, 20);
+            this.totalBox.TabIndex = 30;
+            // 
+            // discTotal
+            // 
+            this.discTotal.Location = new System.Drawing.Point(356, 415);
+            this.discTotal.Name = "discTotal";
+            this.discTotal.Size = new System.Drawing.Size(100, 20);
+            this.discTotal.TabIndex = 31;
             // 
             // OrderBasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.discTotal);
+            this.Controls.Add(this.totalBox);
+            this.Controls.Add(this.numOfItems);
+            this.Controls.Add(this.numOfProducts);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.quantityCounter);
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.discTotalLabel);
             this.Controls.Add(this.totalLabel);
@@ -261,11 +356,11 @@
             this.Controls.Add(this.checkOutButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.removeButton);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.basketListView);
+            this.Controls.Add(this.productNameBox);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(this.discountBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.descLabel);
             this.Controls.Add(this.discountLabel);
@@ -273,7 +368,7 @@
             this.Controls.Add(this.productLabel);
             this.Name = "OrderBasketForm";
             this.Text = "OrderBasket";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityCounter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,11 +381,11 @@
         private System.Windows.Forms.Label discountLabel;
         private System.Windows.Forms.Label descLabel;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox discountBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.RichTextBox descriptionTextBox;
+        private System.Windows.Forms.ComboBox productNameBox;
+        private System.Windows.Forms.ListView basketListView;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button checkOutButton;
@@ -301,7 +396,19 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Label discTotalLabel;
         private System.Windows.Forms.Label quantityLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.NumericUpDown quantityCounter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader prodNumber;
+        private System.Windows.Forms.ColumnHeader prodName;
+        private System.Windows.Forms.ColumnHeader quantity;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ColumnHeader total;
+        private System.Windows.Forms.ColumnHeader rrp;
+        private System.Windows.Forms.ColumnHeader desc;
+        private System.Windows.Forms.TextBox numOfProducts;
+        private System.Windows.Forms.TextBox numOfItems;
+        private System.Windows.Forms.TextBox totalBox;
+        private System.Windows.Forms.TextBox discTotal;
     }
 }
