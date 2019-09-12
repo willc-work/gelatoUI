@@ -80,6 +80,7 @@ namespace GelatoUI
                     bItem.Quantity.ToString(),
                     bItem.Price.ToString("C2"),
                     bItem.totalValueOfBasketItem.ToString("C2"),
+                    bItem.RecommendedRetailPrice.ToString(),
                     bItem.Description
                 });
 
@@ -130,5 +131,9 @@ namespace GelatoUI
             discountBox.Text = discount.ToString();
         }
 
+        private void DiscTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

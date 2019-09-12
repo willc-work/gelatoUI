@@ -162,32 +162,39 @@
             // 
             // prodNumber
             // 
-            this.prodNumber.Text = "Product Number";
+            this.prodNumber.Text = "Product No.";
+            this.prodNumber.Width = 50;
             // 
             // prodName
             // 
             this.prodName.Text = "Product Name";
+            this.prodName.Width = 120;
             // 
             // quantity
             // 
             this.quantity.Tag = "test";
             this.quantity.Text = "Quantity";
+            this.quantity.Width = 50;
             // 
             // price
             // 
             this.price.Text = "Price";
+            this.price.Width = 50;
             // 
             // total
             // 
             this.total.Text = "Total";
+            this.total.Width = 50;
             // 
             // rrp
             // 
             this.rrp.Text = "RRP";
+            this.rrp.Width = 50;
             // 
             // desc
             // 
             this.desc.Text = "Description";
+            this.desc.Width = 200;
             // 
             // removeButton
             // 
@@ -333,6 +340,7 @@
             this.discTotal.Name = "discTotal";
             this.discTotal.Size = new System.Drawing.Size(100, 20);
             this.discTotal.TabIndex = 31;
+            this.discTotal.TextChanged += new System.EventHandler(this.DiscTotal_TextChanged);
             // 
             // OrderBasketForm
             // 
