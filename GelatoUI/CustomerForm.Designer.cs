@@ -266,7 +266,7 @@ namespace GelatoUI
             this.takeNewOrderButton.TabIndex = 31;
             this.takeNewOrderButton.Text = "Take New Order";
             this.takeNewOrderButton.UseVisualStyleBackColor = true;
-            this.takeNewOrderButton.Click += new System.EventHandler(this.Button1_Click);
+            this.takeNewOrderButton.Click += new System.EventHandler(this.TakeNewOrderButton_Click_1);
             // 
             // label10
             // 
