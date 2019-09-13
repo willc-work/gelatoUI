@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GelatoUI
@@ -30,13 +25,6 @@ namespace GelatoUI
             removeButton.Enabled = false;
         }
 
-        private void OrderBasketForm_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -54,6 +42,7 @@ namespace GelatoUI
             BasketItemsToListView();
 
         }
+
         public void BasketItemsToListView()
         {
             basketListView.Items.Clear();
@@ -79,21 +68,10 @@ namespace GelatoUI
 
                 basketListView.Items.Add(item);
             }
-            //Using Datagrid and databinding to display basket content
-            //Note: The nasty kludge of setting DataSource to null to
-            //ensure it refreshes and displays the current basket state
-            //basketItemsDataGridView.DataSource = null;
-            //basketItemsDataGridView.DataSource = ob.BasketItems;
 
             clearButton.Enabled = true;
             checkOutButton.Enabled = true;
             removeButton.Enabled = true;
-
-        }
-
-
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -108,12 +86,9 @@ namespace GelatoUI
 
         private void ClearBasket()
         {
-          //  ClearBasket();
-            totalBox.Clear();
-            numOfItems.Clear();
-            BasketItemsToListView();
-            //  deliverRadioButton.Checked = false;
-            //  collectRadioButton.Checked = false;
+            ob.ClearBasket();
+            //   totalBox.Clear();
+            //    numOfItems.Clear();
         }
 
         private void ProductNameBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -122,11 +97,6 @@ namespace GelatoUI
             descriptionTextBox.Text = ((Product)productNameBox.SelectedItem).Description;
             var discount = (((Product)productNameBox.SelectedItem).Price) * cust.Discount/100;
             discountBox.Text = discount.ToString("C2");
-        }
-
-        private void DiscTotal_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -140,8 +110,20 @@ namespace GelatoUI
                 return; //No items selected
             ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].SubItems[0].Text));
             BasketItemsToListView();
-            removeButton.Enabled = false; //currently disables after deleting an item even if other items remain
+            removeButton.Enabled = false;
         }
 
+        private void CheckOutButton_Click(object sender, EventArgs e)
+        {
+            if (ob.NumberOfItems == 0)
+            {
+                MessageBox.Show("The basket is currently empty!", "Basket Empty", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+
+            OrderHistoryForm ohf = new OrderHistoryForm(cust);
+            ohf.Show();
+            this.Hide();
+        }
     }
 }

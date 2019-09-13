@@ -155,6 +155,7 @@
             this.rrp,
             this.desc});
             this.basketListView.HideSelection = false;
+            this.basketListView.LabelWrap = false;
             this.basketListView.Location = new System.Drawing.Point(32, 152);
             this.basketListView.Name = "basketListView";
             this.basketListView.Size = new System.Drawing.Size(602, 225);
@@ -226,6 +227,7 @@
             this.checkOutButton.TabIndex = 15;
             this.checkOutButton.Text = "Check Out";
             this.checkOutButton.UseVisualStyleBackColor = true;
+            this.checkOutButton.Click += new System.EventHandler(this.CheckOutButton_Click);
             // 
             // cancelButton
             // 
@@ -344,7 +346,6 @@
             this.discTotal.Name = "discTotal";
             this.discTotal.Size = new System.Drawing.Size(100, 20);
             this.discTotal.TabIndex = 31;
-            this.discTotal.TextChanged += new System.EventHandler(this.DiscTotal_TextChanged);
             // 
             // discLabel
             // 

@@ -39,8 +39,6 @@ namespace GelatoUI
             this.custDiscLabel = new System.Windows.Forms.Label();
             this.secQuestLabel = new System.Windows.Forms.Label();
             this.secAnswerLabek = new System.Windows.Forms.Label();
-            this.selectButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.addNewCustButton = new System.Windows.Forms.Button();
             this.custListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -137,26 +135,6 @@ namespace GelatoUI
             this.secAnswerLabek.Size = new System.Drawing.Size(83, 13);
             this.secAnswerLabek.TabIndex = 16;
             this.secAnswerLabek.Text = "Security Answer";
-            // 
-            // selectButton
-            // 
-            this.selectButton.Location = new System.Drawing.Point(12, 398);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(92, 23);
-            this.selectButton.TabIndex = 18;
-            this.selectButton.Text = "Select Customer";
-            this.selectButton.UseVisualStyleBackColor = true;
-            this.selectButton.Click += new System.EventHandler(this.SelectButton_Click);
-            // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(110, 398);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 19;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // addNewCustButton
             // 
@@ -305,8 +283,6 @@ namespace GelatoUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.custListBox);
             this.Controls.Add(this.addNewCustButton);
-            this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.selectButton);
             this.Controls.Add(this.secAnswerLabek);
             this.Controls.Add(this.secQuestLabel);
             this.Controls.Add(this.custDiscLabel);
@@ -335,8 +311,6 @@ namespace GelatoUI
         private System.Windows.Forms.Label custDiscLabel;
         private System.Windows.Forms.Label secQuestLabel;
         private System.Windows.Forms.Label secAnswerLabek;
-        private Button selectButton;
-        private Button clearButton;
         private Button addNewCustButton;
         private ListBox custListBox;
         private Label label1;
