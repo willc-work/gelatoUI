@@ -87,8 +87,11 @@ namespace GelatoUI
         private void ClearBasket()
         {
             ob.ClearBasket();
-            //   totalBox.Clear();
-            //    numOfItems.Clear();
+            BasketItemsToListView();
+            numOfProducts.Clear();
+            totalBox.Clear();
+            discTotal.Clear();
+            numOfItems.Clear();
         }
 
         private void ProductNameBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -120,6 +123,37 @@ namespace GelatoUI
                 MessageBox.Show("The basket is currently empty!", "Basket Empty", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+
+            Gelato2UEntitiesA db = new Gelato2UEntitiesA();
+
+            List<OrderItem> itemsToAdd = new List<OrderItem>();
+
+            //create list populate with orderbasket
+            foreach (BasketItem item in ob.BasketItems)
+            {
+                itemsToAdd.Add(new OrderItem
+                {
+                    ProductNumber = item.ProductNumber,
+                    Quantity = item.Quantity
+                });
+            }
+
+            //create an order object - needs to match the format of database table
+            Order order = new Order
+            {
+                OrderDate = DateTime.Now,
+                CustomerNumber = cust.CustomerNumber,
+                CustomerDiscount = cust.Discount,
+                OrderStatus = 1,
+                OrderTotalBeforeDiscount = ob.BasketTotal,
+                OrderItems = itemsToAdd
+            };
+
+
+
+            //save changes to db
+            db.Orders.Add(order);
+            db.SaveChanges();
 
             OrderHistoryForm ohf = new OrderHistoryForm(cust);
             ohf.Show();

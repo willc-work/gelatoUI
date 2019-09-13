@@ -35,13 +35,14 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.secQuestLabel = new System.Windows.Forms.Label();
             this.secAnsLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.postcodeBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.secQuestBox = new System.Windows.Forms.TextBox();
+            this.secAnswerBox = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.RichTextBox();
+            this.submitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addNameLabel
@@ -107,68 +108,79 @@
             this.secAnsLabel.TabIndex = 10;
             this.secAnsLabel.Text = "Security Answer";
             // 
-            // textBox1
+            // nameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(208, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 15;
+            this.nameBox.Location = new System.Drawing.Point(208, 27);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(247, 20);
+            this.nameBox.TabIndex = 15;
             // 
-            // textBox2
+            // postcodeBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 20);
-            this.textBox2.TabIndex = 17;
+            this.postcodeBox.Location = new System.Drawing.Point(208, 162);
+            this.postcodeBox.Name = "postcodeBox";
+            this.postcodeBox.Size = new System.Drawing.Size(247, 20);
+            this.postcodeBox.TabIndex = 17;
             // 
-            // textBox3
+            // phoneNumberBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(208, 194);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 19;
+            this.phoneNumberBox.Location = new System.Drawing.Point(208, 194);
+            this.phoneNumberBox.Name = "phoneNumberBox";
+            this.phoneNumberBox.Size = new System.Drawing.Size(247, 20);
+            this.phoneNumberBox.TabIndex = 19;
             // 
-            // textBox4
+            // emailBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(208, 228);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 20);
-            this.textBox4.TabIndex = 21;
+            this.emailBox.Location = new System.Drawing.Point(208, 228);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(247, 20);
+            this.emailBox.TabIndex = 21;
             // 
-            // textBox6
+            // secQuestBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(208, 270);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(247, 20);
-            this.textBox6.TabIndex = 23;
+            this.secQuestBox.Location = new System.Drawing.Point(208, 270);
+            this.secQuestBox.Name = "secQuestBox";
+            this.secQuestBox.Size = new System.Drawing.Size(247, 20);
+            this.secQuestBox.TabIndex = 23;
             // 
-            // textBox7
+            // secAnswerBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(208, 334);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(247, 20);
-            this.textBox7.TabIndex = 25;
+            this.secAnswerBox.Location = new System.Drawing.Point(208, 334);
+            this.secAnswerBox.Name = "secAnswerBox";
+            this.secAnswerBox.Size = new System.Drawing.Size(247, 20);
+            this.secAnswerBox.TabIndex = 25;
             // 
-            // richTextBox1
+            // addressBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(208, 63);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(247, 81);
-            this.richTextBox1.TabIndex = 26;
-            this.richTextBox1.Text = "";
+            this.addressBox.Location = new System.Drawing.Point(208, 63);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(247, 81);
+            this.addressBox.TabIndex = 26;
+            this.addressBox.Text = "";
+            // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(56, 388);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(188, 37);
+            this.submitButton.TabIndex = 27;
+            this.submitButton.Text = "Submit New Customer Details";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // CreateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.addressBox);
+            this.Controls.Add(this.secAnswerBox);
+            this.Controls.Add(this.secQuestBox);
+            this.Controls.Add(this.emailBox);
+            this.Controls.Add(this.phoneNumberBox);
+            this.Controls.Add(this.postcodeBox);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.secAnsLabel);
             this.Controls.Add(this.secQuestLabel);
             this.Controls.Add(this.emailLabel);
@@ -192,12 +204,13 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label secQuestLabel;
         private System.Windows.Forms.Label secAnsLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.TextBox postcodeBox;
+        private System.Windows.Forms.TextBox phoneNumberBox;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.TextBox secQuestBox;
+        private System.Windows.Forms.TextBox secAnswerBox;
+        private System.Windows.Forms.RichTextBox addressBox;
+        private System.Windows.Forms.Button submitButton;
     }
 }
