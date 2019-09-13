@@ -80,6 +80,10 @@ namespace GelatoUI
                 this.BasketItems.Remove(specifiedItem);
             }
         }
+        public void ClearBasket()
+        {
+            this.BasketItems.Clear();
+        }
 
         private bool FindBasketItemByProductNumber(int productNumber, out BasketItem foundItem)
         {

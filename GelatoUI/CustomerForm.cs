@@ -31,21 +31,6 @@ namespace GelatoUI
             cc.ShowDialog();
         }
 
-        private void SelectButton_Click(object sender, EventArgs e)
-        {
-
-            //Customer cust = (Customer)custListBox.SelectedItem;
-            //label1.Text = cust.CustomerNumber.ToString();
-            //label2.Text = cust.CustomerName;
-            //label3.Text = cust.Postcode;
-            //label4.Text = cust.AddressLine1;
-            //label5.Text = cust.Phone;
-            //label6.Text = cust.Email;
-            //label7.Text = cust.Discount.ToString();
-            //label8.Text = cust.SecurityQuestion;
-            //label9.Text = cust.SecurityQuestionAnswer;
-        }
-
         private void CustomerForm_Load(object sender, EventArgs e)
         {
 
@@ -54,11 +39,6 @@ namespace GelatoUI
             custListBox.DataSource = cl;
             custListBox.DisplayMember ="CustomerName";
             takeNewOrderButton.Enabled = false;
-
-        }
-
-        private void CustomerListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -85,8 +65,6 @@ namespace GelatoUI
             OrderBasketForm ob = new OrderBasketForm((Customer)custListBox.SelectedItem);
             ob.Show();
             this.Hide();
-            //   ob.ShowDialog();
-            //   ob.CurrentCustomer = (Customer)custListBox.SelectedItem;
         }
     }
 }
