@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GelatoUI
+namespace GelatoDataModel.Models
 {
-    public class BasketItem
+    [Table("OrderItems")]
+    public class BasketItem : IBasketItem
     {
+
+        public BasketItem()
+        {
+
+        }
 
         public BasketItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
@@ -19,8 +26,9 @@ namespace GelatoUI
             this.Description = description;
         }
 
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ProductNumber { get; set; }
-
+        public int OrderNumber { get; set; }
         public string ProductName
         {
             get; private set;
@@ -64,7 +72,7 @@ namespace GelatoUI
             return Quantity += quantity;
         }
 
-        public int DencreaseQuantity(int quantity)
+        public int DecreaseQuantity(int quantity)
         {
             return Quantity -= quantity;
         }

@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasketItem.cs" />
     <Compile Include="CreateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +167,12 @@
       <DependentUpon>Gelato2UModel.edmx</DependentUpon>
       <LastGenOutput>Gelato2UModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GelatoDataModel\GelatoDataModel.csproj">
+      <Project>{3B476D55-315C-4367-AFD5-70CBB48578B8}</Project>
+      <Name>GelatoDataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
