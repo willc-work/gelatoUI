@@ -35,11 +35,35 @@ namespace GelatoUI
         private void AddButton_Click(object sender, EventArgs e)
         {
             int quantity;
-
             Product product = (Product)productNameBox.SelectedItem;
             quantity = (int)quantityCounter.Value;
-            ob.AddProduct(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
-            BasketItemsToListView();
+
+            if (quantity <= 0)
+            {
+                MessageBox.Show("No quantity has been selected", "Quantity Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return; //No items selected
+            }
+
+            if (quantity >= 25)
+            {
+                DialogResult quantityResponse = MessageBox.Show("You have selected a large amount is this correct?", "Quantity Invalid", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (quantityResponse == DialogResult.Yes)
+                {
+                    ob.AddProduct(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
+                    BasketItemsToListView();
+                }
+                else
+                {
+                    quantityCounter.Value = 0;
+                }
+            }
+            else
+            {
+                ob.AddProduct(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
+                BasketItemsToListView();
+            }
+
+
 
         }
 
@@ -111,7 +135,7 @@ namespace GelatoUI
         {
             if (basketListView.SelectedItems.Count <= 0)
                 return; //No items selected
-            ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].SubItems[0].Text));
+            ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].Text));
             BasketItemsToListView();
             removeButton.Enabled = false;
         }
