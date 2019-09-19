@@ -104,7 +104,7 @@ namespace GelatoUI
                 {
                     MessageBox.Show("Failed to Save new Cutomer");
                 }
-            }//end of valudationcheck
+            }//end of validationcheck
             else
             {
                 MessageBox.Show("Failed Validation");

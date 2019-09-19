@@ -174,8 +174,6 @@ namespace GelatoUI
                 OrderItems = itemsToAdd
             };
 
-
-
             //save changes to db
             db.Orders.Add(order);
             db.SaveChanges();

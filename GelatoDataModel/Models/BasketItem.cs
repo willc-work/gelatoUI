@@ -26,7 +26,7 @@ namespace GelatoDataModel.Models
             this.Description = description;
         }
 
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductNumber { get; set; }
         public int OrderNumber { get; set; }
         public string ProductName
@@ -71,7 +71,8 @@ namespace GelatoDataModel.Models
         {
             return Quantity += quantity;
         }
-
+        // Not currently in use, remove clears the item from the basket entirely
+        // Potential improvment to add a remove quantity button to reduce quantity by 1 each click
         public int DecreaseQuantity(int quantity)
         {
             return Quantity -= quantity;

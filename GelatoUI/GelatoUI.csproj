@@ -108,7 +108,6 @@
     <Compile Include="Product.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateCustomer.resx">
