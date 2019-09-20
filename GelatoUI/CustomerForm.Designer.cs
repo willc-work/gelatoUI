@@ -53,6 +53,7 @@ namespace GelatoUI
             this.takeNewOrderButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.orderHistButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // custNumLabel
@@ -264,11 +265,22 @@ namespace GelatoUI
             this.label11.TabIndex = 33;
             this.label11.Text = "label11";
             // 
+            // orderHistButton
+            // 
+            this.orderHistButton.Location = new System.Drawing.Point(315, 408);
+            this.orderHistButton.Name = "orderHistButton";
+            this.orderHistButton.Size = new System.Drawing.Size(174, 23);
+            this.orderHistButton.TabIndex = 34;
+            this.orderHistButton.Text = "View Order History";
+            this.orderHistButton.UseVisualStyleBackColor = true;
+            this.orderHistButton.Click += new System.EventHandler(this.OrderHistButton_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.orderHistButton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.takeNewOrderButton);
@@ -325,5 +337,6 @@ namespace GelatoUI
         private Button takeNewOrderButton;
         private Label label10;
         private Label label11;
+        private Button orderHistButton;
     }
 }

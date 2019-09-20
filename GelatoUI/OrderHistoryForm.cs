@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using GelatoDataModel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace GelatoUI
 {
     public partial class OrderHistoryForm : Form
     {
+       // private Customer cust;
+
         public Customer CurrentCustomer { get; set; }
         public OrderHistoryForm(Customer currentCustomer)
         {
@@ -19,12 +22,11 @@ namespace GelatoUI
             CurrentCustomer = currentCustomer;
             getOrders();
         }
+
         private void getOrders()
         {
-
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Order> orders = db.Orders.Where(x=>x.CustomerNumber==CurrentCustomer.CustomerNumber).ToList();
-
             foreach (Order order in orders)
             {
                 ListViewItem item = new ListViewItem(new[]
@@ -39,6 +41,7 @@ namespace GelatoUI
 
                 orderHistoryListView.Items.Add(item);
             }
+            
         }
 
         private void getOrderDetails()

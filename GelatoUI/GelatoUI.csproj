@@ -55,12 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasketItem.cs" />
-    <Compile Include="CreateCustomer.cs">
+    <Compile Include="CreateCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateCustomer.Designer.cs">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    <Compile Include="CreateCustomerForm.Designer.cs">
+      <DependentUpon>CreateCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
@@ -109,11 +108,10 @@
     <Compile Include="Product.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateCustomer.resx">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="CreateCustomerForm.resx">
+      <DependentUpon>CreateCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
@@ -168,6 +166,12 @@
       <DependentUpon>Gelato2UModel.edmx</DependentUpon>
       <LastGenOutput>Gelato2UModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GelatoDataModel\GelatoDataModel.csproj">
+      <Project>{3B476D55-315C-4367-AFD5-70CBB48578B8}</Project>
+      <Name>GelatoDataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

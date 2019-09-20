@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GelatoDataModel.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,12 +18,16 @@ namespace GelatoUI
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Product> pl = db.Products.ToList();
             label2.Text = cust.CustomerName;
-            discValue.Text = cust.Discount.ToString();
+            discValue.Text = cust.Discount.ToString()+"%";
             productNameBox.DataSource = pl;
             productNameBox.DisplayMember = "ProductName";
             checkOutButton.Enabled = false;
             clearButton.Enabled = false;
             removeButton.Enabled = false;
+            numOfProducts.Text = "0";
+            numOfItems.Text = "0";
+            totalBox.Text = "£0.00";
+            discTotal.Text = "£0.00";
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -74,7 +79,9 @@ namespace GelatoUI
             numOfItems.Text = ob.NumberOfItems.ToString();
             numOfProducts.Text = ob.NumberOfProducts.ToString();
             totalBox.Text = string.Format("{0:C2}", ob.BasketTotal);
-            discTotal.Text = string.Format("{0:C2}", ob.BasketTotal);
+            decimal orderCost = ob.BasketTotal - (ob.BasketTotal * cust.Discount / 100);
+            orderCost.ToString();   
+            discTotal.Text = string.Format("{0:C2}", orderCost);
 
             //Using ListView Control to display basket contents
             foreach (BasketItem bItem in ob.BasketItems)
@@ -95,7 +102,6 @@ namespace GelatoUI
 
             clearButton.Enabled = true;
             checkOutButton.Enabled = true;
-            removeButton.Enabled = true;
 
         }
 
@@ -105,6 +111,8 @@ namespace GelatoUI
             if (clearResponse == DialogResult.Yes)
             {
                 ClearBasket();
+                clearButton.Enabled = false;
+                removeButton.Enabled = false;
             }
         }
 
@@ -134,7 +142,7 @@ namespace GelatoUI
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (basketListView.SelectedItems.Count <= 0)
-                return; //No items selected
+               return; 
             ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].Text));
             BasketItemsToListView();
             removeButton.Enabled = false;
@@ -173,8 +181,6 @@ namespace GelatoUI
                 OrderItems = itemsToAdd
             };
 
-
-
             //save changes to db
             db.Orders.Add(order);
             db.SaveChanges();
@@ -182,6 +188,11 @@ namespace GelatoUI
             OrderHistoryForm ohf = new OrderHistoryForm(cust);
             ohf.Show();
             this.Hide();
+        }
+
+        private void BasketListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            removeButton.Enabled = true;
         }
     }
 }

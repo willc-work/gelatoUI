@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GelatoDataModel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace GelatoUI
 {
     public partial class CustomerForm : Form
     {
-        
+         Customer customer = new Customer();
         public CustomerForm()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace GelatoUI
         private void AddNewCustButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CreateCustomer cc = new CreateCustomer();
+            CreateCustomerForm cc = new CreateCustomerForm();
             cc.ShowDialog();
         }
 
@@ -39,6 +40,7 @@ namespace GelatoUI
             custListBox.DataSource = cl;
             custListBox.DisplayMember ="CustomerName";
             takeNewOrderButton.Enabled = false;
+            orderHistButton.Enabled = false;
 
         }
 
@@ -58,12 +60,21 @@ namespace GelatoUI
             label8.Text = customer.SecurityQuestion;
             label9.Text = customer.SecurityQuestionAnswer;
             takeNewOrderButton.Enabled = true;
+            orderHistButton.Enabled = true;
         }
 
         private void TakeNewOrderButton_Click_1(object sender, EventArgs e)
         {
             OrderBasketForm ob = new OrderBasketForm((Customer)custListBox.SelectedItem);
             ob.Show();
+            this.Hide();
+        }
+
+        private void OrderHistButton_Click(object sender, EventArgs e)
+        {
+            Customer customer = (Customer)custListBox.SelectedItem;
+            OrderHistoryForm ohf = new OrderHistoryForm(customer);
+            ohf.Show();
             this.Hide();
         }
     }

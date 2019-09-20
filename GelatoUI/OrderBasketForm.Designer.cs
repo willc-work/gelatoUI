@@ -64,6 +64,8 @@
             this.discTotal = new System.Windows.Forms.TextBox();
             this.discLabel = new System.Windows.Forms.Label();
             this.discValue = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quantityCounter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +121,7 @@
             this.discountBox.Name = "discountBox";
             this.discountBox.Size = new System.Drawing.Size(100, 20);
             this.discountBox.TabIndex = 8;
+            this.discountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // priceTextBox
             // 
@@ -126,6 +129,7 @@
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceTextBox.TabIndex = 9;
+            this.priceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // descriptionTextBox
             // 
@@ -158,10 +162,11 @@
             this.basketListView.LabelWrap = false;
             this.basketListView.Location = new System.Drawing.Point(32, 152);
             this.basketListView.Name = "basketListView";
-            this.basketListView.Size = new System.Drawing.Size(602, 225);
+            this.basketListView.Size = new System.Drawing.Size(639, 225);
             this.basketListView.TabIndex = 12;
             this.basketListView.UseCompatibleStateImageBehavior = false;
             this.basketListView.View = System.Windows.Forms.View.Details;
+            this.basketListView.SelectedIndexChanged += new System.EventHandler(this.BasketListView_SelectedIndexChanged);
             // 
             // prodNumber
             // 
@@ -182,16 +187,19 @@
             // price
             // 
             this.price.Text = "Price";
+            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.price.Width = 50;
             // 
             // total
             // 
             this.total.Text = "Total";
+            this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total.Width = 50;
             // 
             // rrp
             // 
             this.rrp.Text = "RRP";
+            this.rrp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.rrp.Width = 50;
             // 
             // desc
@@ -201,7 +209,7 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(659, 152);
+            this.removeButton.Location = new System.Drawing.Point(699, 190);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(89, 19);
             this.removeButton.TabIndex = 13;
@@ -211,7 +219,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(659, 177);
+            this.clearButton.Location = new System.Drawing.Point(699, 226);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(89, 19);
             this.clearButton.TabIndex = 14;
@@ -221,7 +229,7 @@
             // 
             // checkOutButton
             // 
-            this.checkOutButton.Location = new System.Drawing.Point(659, 345);
+            this.checkOutButton.Location = new System.Drawing.Point(699, 316);
             this.checkOutButton.Name = "checkOutButton";
             this.checkOutButton.Size = new System.Drawing.Size(89, 43);
             this.checkOutButton.TabIndex = 15;
@@ -231,7 +239,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(659, 394);
+            this.cancelButton.Location = new System.Drawing.Point(699, 374);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(89, 19);
             this.cancelButton.TabIndex = 16;
@@ -241,7 +249,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(659, 419);
+            this.exitButton.Location = new System.Drawing.Point(699, 416);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(89, 19);
             this.exitButton.TabIndex = 17;
@@ -261,7 +269,7 @@
             // numItemsLabel
             // 
             this.numItemsLabel.AutoSize = true;
-            this.numItemsLabel.Location = new System.Drawing.Point(148, 395);
+            this.numItemsLabel.Location = new System.Drawing.Point(124, 394);
             this.numItemsLabel.Name = "numItemsLabel";
             this.numItemsLabel.Size = new System.Drawing.Size(64, 13);
             this.numItemsLabel.TabIndex = 19;
@@ -270,7 +278,7 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(263, 395);
+            this.totalLabel.Location = new System.Drawing.Point(322, 416);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(31, 13);
             this.totalLabel.TabIndex = 20;
@@ -279,7 +287,7 @@
             // discTotalLabel
             // 
             this.discTotalLabel.AutoSize = true;
-            this.discTotalLabel.Location = new System.Drawing.Point(353, 397);
+            this.discTotalLabel.Location = new System.Drawing.Point(445, 413);
             this.discTotalLabel.Name = "discTotalLabel";
             this.discTotalLabel.Size = new System.Drawing.Size(88, 13);
             this.discTotalLabel.TabIndex = 21;
@@ -321,40 +329,42 @@
             // 
             // numOfProducts
             // 
-            this.numOfProducts.Location = new System.Drawing.Point(40, 415);
+            this.numOfProducts.Location = new System.Drawing.Point(32, 415);
             this.numOfProducts.Name = "numOfProducts";
             this.numOfProducts.Size = new System.Drawing.Size(69, 20);
             this.numOfProducts.TabIndex = 28;
             // 
             // numOfItems
             // 
-            this.numOfItems.Location = new System.Drawing.Point(151, 415);
+            this.numOfItems.Location = new System.Drawing.Point(127, 415);
             this.numOfItems.Name = "numOfItems";
             this.numOfItems.Size = new System.Drawing.Size(84, 20);
             this.numOfItems.TabIndex = 29;
             // 
             // totalBox
             // 
-            this.totalBox.Location = new System.Drawing.Point(266, 415);
+            this.totalBox.Location = new System.Drawing.Point(368, 410);
             this.totalBox.Name = "totalBox";
             this.totalBox.Size = new System.Drawing.Size(71, 20);
             this.totalBox.TabIndex = 30;
+            this.totalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discTotal
             // 
-            this.discTotal.Location = new System.Drawing.Point(356, 415);
+            this.discTotal.Location = new System.Drawing.Point(539, 410);
             this.discTotal.Name = "discTotal";
             this.discTotal.Size = new System.Drawing.Size(100, 20);
             this.discTotal.TabIndex = 31;
+            this.discTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discLabel
             // 
             this.discLabel.AutoSize = true;
             this.discLabel.Location = new System.Drawing.Point(200, 9);
             this.discLabel.Name = "discLabel";
-            this.discLabel.Size = new System.Drawing.Size(125, 13);
+            this.discLabel.Size = new System.Drawing.Size(96, 13);
             this.discLabel.TabIndex = 32;
-            this.discLabel.Text = "Customer Discount       %";
+            this.discLabel.Text = "Customer Discount";
             this.discLabel.UseMnemonic = false;
             // 
             // discValue
@@ -366,11 +376,31 @@
             this.discValue.TabIndex = 33;
             this.discValue.Text = "label3";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(677, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Select Prodct Number";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(686, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "To Remove An Item";
+            // 
             // OrderBasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.discValue);
             this.Controls.Add(this.discLabel);
             this.Controls.Add(this.discTotal);
@@ -446,5 +476,7 @@
         private System.Windows.Forms.TextBox discTotal;
         private System.Windows.Forms.Label discLabel;
         private System.Windows.Forms.Label discValue;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
