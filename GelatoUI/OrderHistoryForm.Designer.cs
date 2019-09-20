@@ -44,7 +44,6 @@
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ordStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.viewDetailsButton = new System.Windows.Forms.Button();
             this.returnHome = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -127,8 +126,7 @@
             this.prodName,
             this.quantity,
             this.price,
-            this.total,
-            this.ordStatus});
+            this.total});
             this.orderDetailsList.HideSelection = false;
             this.orderDetailsList.LabelWrap = false;
             this.orderDetailsList.Location = new System.Drawing.Point(12, 260);
@@ -170,11 +168,6 @@
             this.total.Text = "Total";
             this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total.Width = 106;
-            // 
-            // ordStatus
-            // 
-            this.ordStatus.Text = "Order Status";
-            this.ordStatus.Width = 107;
             // 
             // viewDetailsButton
             // 
@@ -243,7 +236,6 @@
         private System.Windows.Forms.ColumnHeader total;
         private System.Windows.Forms.Button viewDetailsButton;
         private System.Windows.Forms.Button returnHome;
-        private System.Windows.Forms.ColumnHeader ordStatus;
         private System.Windows.Forms.Label label1;
     }
 }

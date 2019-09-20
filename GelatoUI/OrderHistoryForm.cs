@@ -25,7 +25,6 @@ namespace GelatoUI
 
         private void getOrders()
         {
-            string status = "Dispatched";
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Order> orders = db.Orders.Where(x=>x.CustomerNumber==CurrentCustomer.CustomerNumber).ToList();
             foreach (Order order in orders)
