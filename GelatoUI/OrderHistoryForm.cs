@@ -13,8 +13,6 @@ namespace GelatoUI
 {
     public partial class OrderHistoryForm : Form
     {
-       // private Customer cust;
-
         public Customer CurrentCustomer { get; set; }
         public OrderHistoryForm(Customer currentCustomer)
         {
@@ -25,6 +23,7 @@ namespace GelatoUI
 
         private void getOrders()
         {
+            //retrieve orders to populate the listview
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Order> orders = db.Orders.Where(x=>x.CustomerNumber==CurrentCustomer.CustomerNumber).ToList();
             foreach (Order order in orders)
@@ -46,6 +45,7 @@ namespace GelatoUI
 
         private void getOrderDetails()
         {
+            //retrieve individual order details to populate the listview
             orderDetailsList.Items.Clear();
             int orderNumber = int.Parse(orderHistoryListView.SelectedItems[0].Text);
 
@@ -72,6 +72,7 @@ namespace GelatoUI
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            // when order is selected allow user to update the order details view
             getOrderDetails();
         }
 

@@ -26,6 +26,7 @@ namespace GelatoUI
 
         private void AddNewCustButton_Click(object sender, EventArgs e)
         {
+            //extra functionality add new customer page
             this.Hide();
             CreateCustomerForm cc = new CreateCustomerForm();
             cc.ShowDialog();
@@ -45,6 +46,7 @@ namespace GelatoUI
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //populate the page with customer details
             Customer customer = (Customer)custListBox.SelectedItem;
             label1.Text = customer.CustomerNumber.ToString();
             label2.Text = customer.CustomerName;

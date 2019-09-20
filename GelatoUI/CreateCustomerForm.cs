@@ -20,6 +20,7 @@ namespace GelatoUI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            //Validate the fields have entries upon submission
             TextBox[] newTextBox = { nameBox, secQuestBox, secAnswerBox, postcodeBox, emailBox };
             for (int i = 0; i < newTextBox.Length; i++)
             {
@@ -31,23 +32,35 @@ namespace GelatoUI
                 }
             }
 
-            TextBox[] newIntBox = { phoneNumberBox };
-            for (int i = 0; i < newIntBox.Length; i++)
+            if (phoneNumberBox.Text == string.Empty)
             {
-                if (newIntBox[i].Text == string.Empty)
-                {
-                    MessageBox.Show("Please add the customers phone number");
-                    newIntBox[i].Focus();
-                    return;
-                }
+                MessageBox.Show("Please enter a Customer Phone Number");
+                return;
             }
+            // validate that the content is numeric for phone numbers
+            else if (Regex.IsMatch(phoneNumberBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please Add a valid phone number, this field only accepts numbers");
+                return;
+            }
+
+            //TextBox[] newIntBox = { phoneNumberBox };
+            //for (int i = 0; i < newIntBox.Length; i++)
+            //{
+            //    if (newIntBox[i].Text == string.Empty)
+            //    {
+            //        MessageBox.Show("Please add the customers phone number");
+            //        newIntBox[i].Focus();
+            //        return;
+            //    }
+            //}
 
             //bool eCheck = IsValidEmail(emailBox.Text);
             //if (!eCheck)
             //{
             //    MessageBox.Show("Please Enter a valid email address in the format e.g abcdef@gmail.com");
             //}
-    
+
             //bool pCheck = IsValidPostcode(postcodeBox.Text);
             //if (!pCheck)
             //{
@@ -113,6 +126,7 @@ namespace GelatoUI
 
         public bool validateCheck()
         {
+            //regex validate email address inputs
             bool eCheck = IsValidEmail(emailBox.Text);
             if (!eCheck)
             {
@@ -143,7 +157,8 @@ namespace GelatoUI
 
         public static bool IsValidPostcode(string inputPostcode)
         {
-           // inputPostcode.ToUpper(); // remove as in wrong place
+            //regex validate postcode inputs
+            // inputPostcode.ToUpper(); // remove as in wrong place
             string strRegex = @"^([A-Z][A-HJ-Y]?[0-9][A-Z0-9]?[0-9][A-Z]{2}|GIR?0A{2})$";
             Regex re = new Regex(strRegex);
             if (re.IsMatch(inputPostcode.ToUpper()))

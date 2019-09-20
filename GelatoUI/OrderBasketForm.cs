@@ -12,6 +12,7 @@ namespace GelatoUI
         public static OrderBasket ob;
         public OrderBasketForm(Customer customer)
         {
+            //set initial state of the form and reset counters
             InitializeComponent();
             cust = customer;
             ob = new OrderBasket();
@@ -39,6 +40,7 @@ namespace GelatoUI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            //add item to the basket, include sanity check valudation for quantities
             int quantity;
             Product product = (Product)productNameBox.SelectedItem;
             quantity = (int)quantityCounter.Value;
@@ -74,6 +76,7 @@ namespace GelatoUI
 
         public void BasketItemsToListView()
         {
+            //view the current contents of the basket and enable buttons when popualated
             basketListView.Items.Clear();
 
             numOfItems.Text = ob.NumberOfItems.ToString();
@@ -107,6 +110,7 @@ namespace GelatoUI
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            // sense check before clearing the basket
             DialogResult clearResponse = MessageBox.Show("Are you sure you want to clear the basket?", "Clear Basket", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (clearResponse == DialogResult.Yes)
             {
@@ -118,6 +122,7 @@ namespace GelatoUI
 
         private void ClearBasket()
         {
+            //reset all counters when the basket is cleared
             ob.ClearBasket();
             BasketItemsToListView();
             numOfProducts.Clear();
