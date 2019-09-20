@@ -27,9 +27,17 @@ namespace GelatoDataLayer.Models
             }
         }
 
-        public bool IsProductInBasket(string productName)
+        //public bool IsProductInBasket(string productName)
+        //{
+        //    if (this.BasketItems.Any(x => x.ProductName.Equals(productName, StringComparison.OrdinalIgnoreCase))) //Check that a product with the productName exists
+        //        return true; //  Product found
+
+        //    return false;
+        //}
+
+        public bool IsProductInBasket(int productNumber)
         {
-            if (this.BasketItems.Any(x => x.ProductName.Equals(productName, StringComparison.OrdinalIgnoreCase))) //Check that a product with the productName exists
+            if (this.BasketItems.Any(x => x.ProductNumber.Equals(productNumber))) //Check that a product with the productName exists
                 return true; //  Product found
 
             return false;
@@ -88,6 +96,7 @@ namespace GelatoDataLayer.Models
                 this.BasketItems.Remove(specifiedItem);
             }
         }
+
         public void ClearBasket()
         {
             this.BasketItems.Clear();
