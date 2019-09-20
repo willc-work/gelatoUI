@@ -44,9 +44,10 @@
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ordStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.viewDetailsButton = new System.Windows.Forms.Button();
             this.returnHome = new System.Windows.Forms.Button();
-            this.ordStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // orderHistoryLabel
@@ -170,9 +171,14 @@
             this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total.Width = 106;
             // 
+            // ordStatus
+            // 
+            this.ordStatus.Text = "Order Status";
+            this.ordStatus.Width = 107;
+            // 
             // viewDetailsButton
             // 
-            this.viewDetailsButton.Location = new System.Drawing.Point(9, 208);
+            this.viewDetailsButton.Location = new System.Drawing.Point(189, 208);
             this.viewDetailsButton.Name = "viewDetailsButton";
             this.viewDetailsButton.Size = new System.Drawing.Size(128, 23);
             this.viewDetailsButton.TabIndex = 15;
@@ -190,16 +196,21 @@
             this.returnHome.UseVisualStyleBackColor = true;
             this.returnHome.Click += new System.EventHandler(this.ReturnHome_Click);
             // 
-            // ordStatus
+            // label1
             // 
-            this.ordStatus.Text = "Order Status";
-            this.ordStatus.Width = 107;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 213);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Select Order Number to see details";
             // 
             // OrderHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.returnHome);
             this.Controls.Add(this.viewDetailsButton);
             this.Controls.Add(this.orderDetailsList);
@@ -233,5 +244,6 @@
         private System.Windows.Forms.Button viewDetailsButton;
         private System.Windows.Forms.Button returnHome;
         private System.Windows.Forms.ColumnHeader ordStatus;
+        private System.Windows.Forms.Label label1;
     }
 }
