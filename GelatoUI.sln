@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoUI", "GelatoUI\GelatoUI.csproj", "{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoDataModel", "GelatoDataModel\GelatoDataModel.csproj", "{3B476D55-315C-4367-AFD5-70CBB48578B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B476D55-315C-4367-AFD5-70CBB48578B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B476D55-315C-4367-AFD5-70CBB48578B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B476D55-315C-4367-AFD5-70CBB48578B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B476D55-315C-4367-AFD5-70CBB48578B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
