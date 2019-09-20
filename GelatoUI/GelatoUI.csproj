@@ -88,7 +88,6 @@
     <Compile Include="Order.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderBasket.cs" />
     <Compile Include="OrderBasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,7 +103,6 @@
     <Compile Include="OrderItem.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderItemFactory.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>Gelato2UModel.tt</DependentUpon>
     </Compile>
@@ -168,9 +166,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GelatoDataModel\GelatoDataModel.csproj">
-      <Project>{3B476D55-315C-4367-AFD5-70CBB48578B8}</Project>
-      <Name>GelatoDataModel</Name>
+    <ProjectReference Include="..\GelatoDataLayer\GelatoDataLayer.csproj">
+      <Project>{496c1d4a-845b-4432-b699-80524308c5f8}</Project>
+      <Name>GelatoDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

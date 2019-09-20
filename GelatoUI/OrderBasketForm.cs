@@ -1,4 +1,4 @@
-﻿using GelatoDataModel.Models;
+﻿using GelatoDataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +54,7 @@ namespace GelatoUI
                 DialogResult quantityResponse = MessageBox.Show("You have selected a large amount is this correct?", "Quantity Invalid", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (quantityResponse == DialogResult.Yes)
                 {
-                    ob.AddProduct(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
+                    ob.AddItem(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
                     BasketItemsToListView();
                 }
                 else
@@ -64,7 +64,7 @@ namespace GelatoUI
             }
             else
             {
-                ob.AddProduct(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
+                ob.AddItem(product.ProductNumber, product.ProductName, product.Price, product.RecommendedRetailPrice, quantity, product.Description);
                 BasketItemsToListView();
             }
 
@@ -92,7 +92,7 @@ namespace GelatoUI
                     bItem.ProductName,
                     bItem.Quantity.ToString(),
                     bItem.Price.ToString("C2"),
-                    bItem.totalValueOfBasketItem.ToString("C2"),
+                    bItem.TotalValueOfBasketItem.ToString("C2"),
                     bItem.RecommendedRetailPrice.ToString("C2"),
                     bItem.Description
                 });
@@ -143,7 +143,7 @@ namespace GelatoUI
         {
             if (basketListView.SelectedItems.Count <= 0)
                return; 
-            ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].Text));
+            ob.RemoveItem(Int32.Parse(basketListView.SelectedItems[0].Text));
             BasketItemsToListView();
             removeButton.Enabled = false;
         }

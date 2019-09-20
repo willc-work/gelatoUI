@@ -25,7 +25,7 @@ namespace GelatoUI
             {
                 if (newTextBox[i].Text == string.Empty)
                 {
-                    MessageBox.Show("Please fill the text box");
+                    MessageBox.Show("Please complete all fields, blank fields are not accepted");
                     newTextBox[i].Focus();
                     return;
                 }
@@ -36,7 +36,7 @@ namespace GelatoUI
             {
                 if (newIntBox[i].Text == string.Empty)
                 {
-                    MessageBox.Show("Please fill the text box");
+                    MessageBox.Show("Please add the customers phone number");
                     newIntBox[i].Focus();
                     return;
                 }
@@ -123,7 +123,7 @@ namespace GelatoUI
             bool pCheck = IsValidPostcode(postcodeBox.Text);
             if (!pCheck)
             {
-                MessageBox.Show("Please Enter a valid Postcode e.g AB12XY");
+                MessageBox.Show("Please Enter a valid Postcode");
                 return false;
             }
             return true;
@@ -143,10 +143,10 @@ namespace GelatoUI
 
         public static bool IsValidPostcode(string inputPostcode)
         {
-            inputPostcode.ToUpper();
-            string strRegex = @"^(A([A-Z][A-HJ-Y]?[0-9][A-Z0-9]?[0-9][A-Z]{2}|GIR?0A{2})\z)$";
+           // inputPostcode.ToUpper(); // remove as in wrong place
+            string strRegex = @"^([A-Z][A-HJ-Y]?[0-9][A-Z0-9]?[0-9][A-Z]{2}|GIR?0A{2})$";
             Regex re = new Regex(strRegex);
-            if (re.IsMatch(inputPostcode))
+            if (re.IsMatch(inputPostcode.ToUpper()))
                 return (true);
             else
                 return (false);
