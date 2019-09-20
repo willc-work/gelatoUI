@@ -1,5 +1,4 @@
 ﻿using System;
-using GelatoDataLayer.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +13,7 @@ namespace GelatoUI
 {
     public partial class CustomerForm : Form
     {
-        G2UCustomer customer = new G2UCustomer();
+        Customer customer = new Customer();
         public CustomerForm()
         {
             InitializeComponent();
@@ -65,14 +64,14 @@ namespace GelatoUI
 
         private void TakeNewOrderButton_Click_1(object sender, EventArgs e)
         {
-            OrderBasketForm ob = new OrderBasketForm((G2UCustomer)custListBox.SelectedItem);
+            OrderBasketForm ob = new OrderBasketForm((Customer)custListBox.SelectedItem);
             ob.Show();
             this.Hide();
         }
 
         private void OrderHistButton_Click(object sender, EventArgs e)
         {
-            G2UCustomer customer = (G2UCustomer)custListBox.SelectedItem;
+            Customer customer = (Customer)custListBox.SelectedItem;
             OrderHistoryForm ohf = new OrderHistoryForm(customer);
             ohf.Show();
             this.Hide();

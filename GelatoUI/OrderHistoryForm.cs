@@ -15,8 +15,8 @@ namespace GelatoUI
     {
        // private Customer cust;
 
-        public G2UCustomer CurrentCustomer { get; set; }
-        public OrderHistoryForm(G2UCustomer currentCustomer)
+        public Customer CurrentCustomer { get; set; }
+        public OrderHistoryForm(Customer currentCustomer)
         {
             InitializeComponent();
             CurrentCustomer = currentCustomer;
