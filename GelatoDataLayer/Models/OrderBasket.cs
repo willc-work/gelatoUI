@@ -27,6 +27,15 @@ namespace GelatoDataLayer.Models
             }
         }
 
+        public bool IsProductInBasket(int productNumber)
+        {
+            if (this.BasketItems.Any(x => x.ProductNumber.Equals(productNumber))) //Check that a product with the productName exists
+                return true; //  Product found
+
+            return false;
+        }
+
+
         /// Returns total cost of all items combined
         public decimal BasketTotal
         {
@@ -79,6 +88,7 @@ namespace GelatoDataLayer.Models
                 this.BasketItems.Remove(specifiedItem);
             }
         }
+
         public void ClearBasket()
         {
             this.BasketItems.Clear();
