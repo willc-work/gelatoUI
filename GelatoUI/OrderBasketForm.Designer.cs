@@ -119,6 +119,7 @@
             this.discountBox.Name = "discountBox";
             this.discountBox.Size = new System.Drawing.Size(100, 20);
             this.discountBox.TabIndex = 8;
+            this.discountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // priceTextBox
             // 
@@ -126,6 +127,7 @@
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceTextBox.TabIndex = 9;
+            this.priceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // descriptionTextBox
             // 
@@ -182,16 +184,19 @@
             // price
             // 
             this.price.Text = "Price";
+            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.price.Width = 50;
             // 
             // total
             // 
             this.total.Text = "Total";
+            this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total.Width = 50;
             // 
             // rrp
             // 
             this.rrp.Text = "RRP";
+            this.rrp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.rrp.Width = 50;
             // 
             // desc
@@ -339,6 +344,7 @@
             this.totalBox.Name = "totalBox";
             this.totalBox.Size = new System.Drawing.Size(71, 20);
             this.totalBox.TabIndex = 30;
+            this.totalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discTotal
             // 
@@ -346,6 +352,7 @@
             this.discTotal.Name = "discTotal";
             this.discTotal.Size = new System.Drawing.Size(100, 20);
             this.discTotal.TabIndex = 31;
+            this.discTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discLabel
             // 

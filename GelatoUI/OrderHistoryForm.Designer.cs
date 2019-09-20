@@ -108,11 +108,13 @@
             // orderTotal
             // 
             this.orderTotal.Text = "Order Total";
+            this.orderTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.orderTotal.Width = 106;
             // 
             // discTotal
             // 
             this.discTotal.Text = "Discounted Total";
+            this.discTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.discTotal.Width = 135;
             // 
             // orderDetailsList
@@ -157,11 +159,13 @@
             // price
             // 
             this.price.Text = "Price";
+            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.price.Width = 90;
             // 
             // total
             // 
             this.total.Text = "Total";
+            this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total.Width = 106;
             // 
             // viewDetailsButton

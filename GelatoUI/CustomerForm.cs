@@ -14,7 +14,7 @@ namespace GelatoUI
 {
     public partial class CustomerForm : Form
     {
-        Customer customer = new Customer();
+         Customer customer = new Customer();
         public CustomerForm()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace GelatoUI
         private void AddNewCustButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CreateCustomer cc = new CreateCustomer();
+            CreateCustomerForm cc = new CreateCustomerForm();
             cc.ShowDialog();
         }
 

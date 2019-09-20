@@ -25,5 +25,6 @@ namespace GelatoDataModel.Models
         public string SecurityQuestionAnswer { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+
     }
 }

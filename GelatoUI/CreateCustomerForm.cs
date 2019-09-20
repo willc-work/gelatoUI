@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace GelatoUI
 {
-    public partial class CreateCustomer : Form
+    public partial class CreateCustomerForm : Form
     {
-        public CreateCustomer()
+        public CreateCustomerForm()
         {
             InitializeComponent();
         }

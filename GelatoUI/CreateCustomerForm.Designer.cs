@@ -1,6 +1,6 @@
 ﻿namespace GelatoUI
 {
-    partial class CreateCustomer
+    partial class CreateCustomerForm
     {
         /// <summary>
         /// Required designer variable.
