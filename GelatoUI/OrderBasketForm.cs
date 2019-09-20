@@ -8,9 +8,9 @@ namespace GelatoUI
 {
     public partial class OrderBasketForm : Form
     {
-        Customer cust;
+        G2UCustomer cust;
         public static OrderBasket ob;
-        public OrderBasketForm(Customer customer)
+        public OrderBasketForm(G2UCustomer customer)
         {
             InitializeComponent();
             cust = customer;

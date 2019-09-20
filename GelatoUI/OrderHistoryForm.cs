@@ -1,4 +1,4 @@
-﻿//using GelatoDataModel.Models;
+﻿using GelatoDataLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +15,8 @@ namespace GelatoUI
     {
        // private Customer cust;
 
-        public Customer CurrentCustomer { get; set; }
-        public OrderHistoryForm(Customer currentCustomer)
+        public G2UCustomer CurrentCustomer { get; set; }
+        public OrderHistoryForm(G2UCustomer currentCustomer)
         {
             InitializeComponent();
             CurrentCustomer = currentCustomer;

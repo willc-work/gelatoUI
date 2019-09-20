@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GelatoDataLayer.Models
 {
     [Table("Customers")]
-    public class Customer
+    public class G2UCustomer
     {
         [Key]
         public int CustomerNumber { get; set; }
