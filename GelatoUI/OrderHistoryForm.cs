@@ -1,4 +1,4 @@
-﻿using GelatoDataModel.Models;
+﻿//using GelatoDataModel.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ namespace GelatoUI
 {
     public partial class OrderHistoryForm : Form
     {
-        private GelatoDataModel.Models.Customer cust;
+       // private Customer cust;
 
         public Customer CurrentCustomer { get; set; }
         public OrderHistoryForm(Customer currentCustomer)
@@ -21,11 +21,6 @@ namespace GelatoUI
             InitializeComponent();
             CurrentCustomer = currentCustomer;
             getOrders();
-        }
-
-        public OrderHistoryForm(GelatoDataModel.Models.Customer cust)
-        {
-            this.cust = cust;
         }
 
         private void getOrders()

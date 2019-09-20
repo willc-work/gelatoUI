@@ -18,7 +18,7 @@ namespace GelatoUI
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Product> pl = db.Products.ToList();
             label2.Text = cust.CustomerName;
-            discValue.Text = cust.Discount.ToString();
+            discValue.Text = cust.Discount.ToString()+"%";
             productNameBox.DataSource = pl;
             productNameBox.DisplayMember = "ProductName";
             checkOutButton.Enabled = false;
@@ -75,7 +75,9 @@ namespace GelatoUI
             numOfItems.Text = ob.NumberOfItems.ToString();
             numOfProducts.Text = ob.NumberOfProducts.ToString();
             totalBox.Text = string.Format("{0:C2}", ob.BasketTotal);
-            discTotal.Text = string.Format("{0:C2}", ob.BasketTotal);
+            decimal orderCost = ob.BasketTotal - (ob.BasketTotal * cust.Discount / 100);
+            orderCost.ToString();   
+            discTotal.Text = string.Format("{0:C2}", orderCost);
 
             //Using ListView Control to display basket contents
             foreach (BasketItem bItem in ob.BasketItems)

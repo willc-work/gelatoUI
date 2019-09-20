@@ -10,7 +10,6 @@ namespace GelatoDataModel.Models
     [Table("OrderItems")]
     public class BasketItem : IBasketItem
     {
-
         public BasketItem()
         {
 

@@ -13,12 +13,10 @@ namespace GelatoDataModel.Models
     {
         [Column(Order = 0), Key, ForeignKey("OrderItems")]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int OrderItemNumber { get; set; }
         public int OrderNumber { get; set; }
-        public int CustomerNumber { get; set; }
-        public DateTime OrderDate { get; set; }
-        public Decimal OrderTotal { get; set; }
-        public int OrderStatus { get; set; }
-        public bool Deliver { get; set; }
+        public DateTime CustomerNumber { get; set; }
+        public Decimal Quantity { get; set; }
 
         public ICollection<BasketItem> OrderItems { get; set; }
 

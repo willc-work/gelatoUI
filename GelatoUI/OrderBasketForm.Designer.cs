@@ -352,9 +352,9 @@
             this.discLabel.AutoSize = true;
             this.discLabel.Location = new System.Drawing.Point(200, 9);
             this.discLabel.Name = "discLabel";
-            this.discLabel.Size = new System.Drawing.Size(125, 13);
+            this.discLabel.Size = new System.Drawing.Size(96, 13);
             this.discLabel.TabIndex = 32;
-            this.discLabel.Text = "Customer Discount       %";
+            this.discLabel.Text = "Customer Discount";
             this.discLabel.UseMnemonic = false;
             // 
             // discValue
