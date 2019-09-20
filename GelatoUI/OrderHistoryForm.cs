@@ -25,10 +25,9 @@ namespace GelatoUI
 
         private void getOrders()
         {
-
+            string status = "Dispatched";
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Order> orders = db.Orders.Where(x=>x.CustomerNumber==CurrentCustomer.CustomerNumber).ToList();
-
             foreach (Order order in orders)
             {
                 ListViewItem item = new ListViewItem(new[]
@@ -43,6 +42,7 @@ namespace GelatoUI
 
                 orderHistoryListView.Items.Add(item);
             }
+            
         }
 
         private void getOrderDetails()

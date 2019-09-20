@@ -24,6 +24,10 @@ namespace GelatoUI
             checkOutButton.Enabled = false;
             clearButton.Enabled = false;
             removeButton.Enabled = false;
+            numOfProducts.Text = "0";
+            numOfItems.Text = "0";
+            totalBox.Text = "£0.00";
+            discTotal.Text = "£0.00";
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -98,7 +102,6 @@ namespace GelatoUI
 
             clearButton.Enabled = true;
             checkOutButton.Enabled = true;
-            removeButton.Enabled = true;
 
         }
 
@@ -108,6 +111,8 @@ namespace GelatoUI
             if (clearResponse == DialogResult.Yes)
             {
                 ClearBasket();
+                clearButton.Enabled = false;
+                removeButton.Enabled = false;
             }
         }
 
@@ -137,7 +142,7 @@ namespace GelatoUI
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (basketListView.SelectedItems.Count <= 0)
-                return; //No items selected
+               return; 
             ob.RemoveProduct(Int32.Parse(basketListView.SelectedItems[0].Text));
             BasketItemsToListView();
             removeButton.Enabled = false;
@@ -183,6 +188,11 @@ namespace GelatoUI
             OrderHistoryForm ohf = new OrderHistoryForm(cust);
             ohf.Show();
             this.Hide();
+        }
+
+        private void BasketListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            removeButton.Enabled = true;
         }
     }
 }

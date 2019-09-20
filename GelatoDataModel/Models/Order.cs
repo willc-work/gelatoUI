@@ -15,8 +15,9 @@ namespace GelatoDataModel.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int OrderItemNumber { get; set; }
         public int OrderNumber { get; set; }
-        public DateTime CustomerNumber { get; set; }
-        public Decimal Quantity { get; set; }
+        public int CustomerNumber { get; set; }
+        public int Quantity { get; set; }
+        public int OrderStatus { get; set; }
 
         public ICollection<BasketItem> OrderItems { get; set; }
 

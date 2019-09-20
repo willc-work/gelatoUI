@@ -46,6 +46,7 @@
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.viewDetailsButton = new System.Windows.Forms.Button();
             this.returnHome = new System.Windows.Forms.Button();
+            this.ordStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // orderHistoryLabel
@@ -125,7 +126,8 @@
             this.prodName,
             this.quantity,
             this.price,
-            this.total});
+            this.total,
+            this.ordStatus});
             this.orderDetailsList.HideSelection = false;
             this.orderDetailsList.LabelWrap = false;
             this.orderDetailsList.Location = new System.Drawing.Point(12, 260);
@@ -154,7 +156,7 @@
             // 
             this.quantity.Tag = "test";
             this.quantity.Text = "Quantity";
-            this.quantity.Width = 157;
+            this.quantity.Width = 64;
             // 
             // price
             // 
@@ -187,6 +189,11 @@
             this.returnHome.Text = "Return To Customer Screen";
             this.returnHome.UseVisualStyleBackColor = true;
             this.returnHome.Click += new System.EventHandler(this.ReturnHome_Click);
+            // 
+            // ordStatus
+            // 
+            this.ordStatus.Text = "Order Status";
+            this.ordStatus.Width = 107;
             // 
             // OrderHistoryForm
             // 
@@ -225,5 +232,6 @@
         private System.Windows.Forms.ColumnHeader total;
         private System.Windows.Forms.Button viewDetailsButton;
         private System.Windows.Forms.Button returnHome;
+        private System.Windows.Forms.ColumnHeader ordStatus;
     }
 }
