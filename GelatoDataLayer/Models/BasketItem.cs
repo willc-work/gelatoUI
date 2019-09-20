@@ -59,7 +59,7 @@ namespace GelatoDataLayer.Models
             }
         }
         public string Description { get; set; }
-        public decimal totalValueOfBasketItem
+        public decimal TotalValueOfBasketItem
         {
             get
             {
@@ -69,12 +69,6 @@ namespace GelatoDataLayer.Models
         public int IncreaseQuantity(int quantity)
         {
             return Quantity += quantity;
-        }
-        // Not currently in use, remove clears the item from the basket entirely
-        // Potential improvment to add a remove quantity button to reduce quantity by 1 each click
-        public int DecreaseQuantity(int quantity)
-        {
-            return Quantity -= quantity;
         }
 
     }

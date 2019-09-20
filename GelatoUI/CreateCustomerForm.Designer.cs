@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.addNameLabel = new System.Windows.Forms.Label();
             this.addAddressLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             this.secAnswerBox = new System.Windows.Forms.TextBox();
             this.addressBox = new System.Windows.Forms.RichTextBox();
             this.submitButton = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // addNameLabel
@@ -168,7 +171,7 @@
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // CreateCustomer
+            // CreateCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,8 +191,9 @@
             this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.addAddressLabel);
             this.Controls.Add(this.addNameLabel);
-            this.Name = "CreateCustomer";
+            this.Name = "CreateCustomerForm";
             this.Text = "CreateCustomer";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +216,6 @@
         private System.Windows.Forms.TextBox secAnswerBox;
         private System.Windows.Forms.RichTextBox addressBox;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

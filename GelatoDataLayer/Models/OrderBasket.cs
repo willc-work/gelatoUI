@@ -36,7 +36,7 @@ namespace GelatoDataLayer.Models
 
                 foreach (BasketItem bi in BasketItems)
                 {
-                    totalPrice += bi.totalValueOfBasketItem;
+                    totalPrice += bi.TotalValueOfBasketItem;
                 }
                 return totalPrice;
             }
@@ -55,7 +55,7 @@ namespace GelatoDataLayer.Models
             }
         }
 
-        public void AddProduct(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
+        public void AddItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
             BasketItem basketItem;
             bool itemFound = SearchBasketUsingProductNumber(productNumber, out basketItem);
@@ -70,7 +70,7 @@ namespace GelatoDataLayer.Models
         }
 
         /// removes the quantity from a product
-        public void RemoveProduct(int productNumber)
+        public void RemoveItem(int productNumber)
         {
             BasketItem specifiedItem;
             if (SearchBasketUsingProductNumber(productNumber, out specifiedItem))
