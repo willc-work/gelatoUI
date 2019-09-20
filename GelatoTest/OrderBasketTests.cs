@@ -62,5 +62,47 @@ namespace GelatoTest
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        public void NumberOfProductsTest()
+        {
+            OrderBasket target = new OrderBasket(); // TODO: Initialize to an appropriate value
+            target.AddItem(1,"Beurre Gelato", 50.0m, 55.5m, 5, "Just some sort of desc");
+            target.AddItem(2,"Pain Gelato", 100.55m, 120.5m, 30, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(4,"Vino Veitas Gelato", 100.47m, 110.5m, 1, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(6,"Strawberry Gelato", 1m, 1.5m, 5, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(6, "Strawberry Gelato", 1m, 1.5m, 5, "Excepteur sint occaecat cupidatat non proident");
+            int expectedNumberOfProducts = 4;
+
+            Assert.AreEqual(expectedNumberOfProducts, target.NumberOfProducts);
+        }
+
+        [TestMethod()]
+        public void NumberOfItemsTest()
+        {
+            OrderBasket target = new OrderBasket();
+            target.AddItem(1, "Beurre Gelato", 50.0m, 55.5m, 10, "Just some sort of desc");
+            target.AddItem(2, "Pain Gelato", 100.55m, 120.5m, 30, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(4, "Vino Veritas Gelato", 100.47m, 110.5m, 1, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(6, "Strawberry Gelato", 1m, 1.5m, 11, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(6, "Strawberry Gelato", 1m, 1.5m, 5, "Excepteur sint occaecat cupidatat non proident");
+            int expectedNumberOfItems = 57;
+
+            Assert.AreEqual(expectedNumberOfItems, target.NumberOfItems);
+        }
+
+
+        //A test to ClearBasket
+        [TestMethod()]
+        public void ClearBasketTest()
+        {
+            OrderBasket target = new OrderBasket();
+            target.AddItem(1, "Beurre Gelato", 50.0m, 55.5m, 10, "Just some sort of desc");
+            target.AddItem(2, "Pain Gelato", 100.55m, 120.5m, 30, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(4, "Vino Veritas Gelato", 100.47m, 110.5m, 1, "Excepteur sint occaecat cupidatat non proident");
+            target.AddItem(6, "Strawberry Gelato", 1m, 1.5m, 11, "Excepteur sint occaecat cupidatat non proident");
+            target.ClearBasket();
+            Assert.AreEqual(0, target.BasketItems.Count);
+        }
+
     }
 }
