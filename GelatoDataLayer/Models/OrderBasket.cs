@@ -1,11 +1,10 @@
-﻿using GelatoDataModel.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GelatoUI
+namespace GelatoDataLayer.Models
 {
     public class OrderBasket
     {
@@ -19,7 +18,7 @@ namespace GelatoUI
             private set;
         }
 
-        /// Returns the total number of distinct product types
+        /// Returns the total individual product types
         public int NumberOfProducts
         {
             get
@@ -28,7 +27,7 @@ namespace GelatoUI
             }
         }
 
-        /// Total cost of all items in basket combined
+        /// Returns total cost of all items combined
         public decimal BasketTotal
         {
             get
@@ -42,8 +41,7 @@ namespace GelatoUI
                 return totalPrice;
             }
         }
-        /// Returns the total quantity of items in all products
-        /// </summary>
+        /// Returns the total individual items across all products
         public int NumberOfItems
         {
             get
@@ -60,7 +58,7 @@ namespace GelatoUI
         public void AddProduct(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
             BasketItem basketItem;
-            bool itemFound = FindBasketItemByProductNumber(productNumber, out basketItem);
+            bool itemFound = SearchBasketUsingProductNumber(productNumber, out basketItem);
 
             if (itemFound)
                 basketItem.IncreaseQuantity(quantity);
@@ -71,11 +69,11 @@ namespace GelatoUI
             }
         }
 
-        /// Entirely removes the quantity from a product
+        /// removes the quantity from a product
         public void RemoveProduct(int productNumber)
         {
             BasketItem specifiedItem;
-            if (FindBasketItemByProductNumber(productNumber, out specifiedItem))
+            if (SearchBasketUsingProductNumber(productNumber, out specifiedItem))
             {
                 //specifiedItem.RemoveItem(specifiedItem.Quantity);
                 this.BasketItems.Remove(specifiedItem);
@@ -86,7 +84,7 @@ namespace GelatoUI
             this.BasketItems.Clear();
         }
 
-        private bool FindBasketItemByProductNumber(int productNumber, out BasketItem foundItem)
+        private bool SearchBasketUsingProductNumber(int productNumber, out BasketItem foundItem)
         {
             foundItem = null;
 

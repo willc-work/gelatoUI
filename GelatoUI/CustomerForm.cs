@@ -1,5 +1,4 @@
-﻿using GelatoDataModel.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +13,7 @@ namespace GelatoUI
 {
     public partial class CustomerForm : Form
     {
-         Customer customer = new Customer();
+        Customer customer = new Customer();
         public CustomerForm()
         {
             InitializeComponent();
