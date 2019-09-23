@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GelatoDataLayer.Models
+namespace GelatoBusinessObjects
 {
     public static class OrderItemFactory
     {
         public static BasketItem GetOrderItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
-            return new BasketItem(productNumber, productName, price,recommendedRetailPrice, quantity, description);
+            return new BasketItem(productNumber, productName, price, recommendedRetailPrice, quantity, description);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace GelatoUI
 {
     public partial class CustomerForm : Form
@@ -18,6 +21,9 @@ namespace GelatoUI
         {
             InitializeComponent();
         }
+
+        [System.ComponentModel.Browsable(false)]
+public System.Collections.IComparer ListViewItemSorter { get; set; }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
@@ -62,6 +68,7 @@ namespace GelatoUI
             label9.Text = customer.SecurityQuestionAnswer;
             takeNewOrderButton.Enabled = true;
             orderHistButton.Enabled = true;
+            custListBox.Sorted = true;
         }
 
         private void TakeNewOrderButton_Click_1(object sender, EventArgs e)
@@ -78,5 +85,35 @@ namespace GelatoUI
             ohf.Show();
             this.Hide();
         }
+
+        private void SortAscButton_Click(object sender, EventArgs e)
+        {
+            if (this.custListBox.SelectedIndex > 0)
+            {
+                int selectedIndex = this.custListBox.SelectedIndex;
+                object selectedItem = this.custListBox.SelectedItem;
+
+                this.custListBox.Items.RemoveAt(selectedIndex);
+                this.custListBox.Items.Insert(selectedIndex - 1, selectedItem);
+
+                this.custListBox.SelectedIndex = selectedIndex - 1;
+            }
+        }
+
+        private void SortDescButton_Click(object sender, EventArgs e)
+        {
+            if (this.custListBox.SelectedIndex > -1 &&
+            this.custListBox.SelectedIndex < this.custListBox.Items.Count - 1)
+            {
+                int selectedIndex = this.custListBox.SelectedIndex;
+                object selectedItem = this.custListBox.SelectedItem;
+
+                this.custListBox.Items.RemoveAt(selectedIndex);
+                this.custListBox.Items.Insert(selectedIndex + 1, selectedItem);
+
+                this.custListBox.SelectedIndex = selectedIndex + 1;
+            }
+        }
+      
     }
 }

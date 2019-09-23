@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GelatoDataLayer\GelatoDataLayer.csproj">
-      <Project>{496c1d4a-845b-4432-b699-80524308c5f8}</Project>
-      <Name>GelatoDataLayer</Name>
+    <ProjectReference Include="..\Gelato2UBusinessObjects\GelatoBusinessObjects.csproj">
+      <Project>{7c491deb-bd14-411b-9ac4-4c95e4e9509b}</Project>
+      <Name>GelatoBusinessObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

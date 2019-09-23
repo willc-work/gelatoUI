@@ -54,6 +54,8 @@ namespace GelatoUI
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.orderHistButton = new System.Windows.Forms.Button();
+            this.sortAscButton = new System.Windows.Forms.Button();
+            this.sortDescButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // custNumLabel
@@ -139,9 +141,9 @@ namespace GelatoUI
             // 
             // addNewCustButton
             // 
-            this.addNewCustButton.Location = new System.Drawing.Point(200, 398);
+            this.addNewCustButton.Location = new System.Drawing.Point(215, 398);
             this.addNewCustButton.Name = "addNewCustButton";
-            this.addNewCustButton.Size = new System.Drawing.Size(75, 23);
+            this.addNewCustButton.Size = new System.Drawing.Size(60, 23);
             this.addNewCustButton.TabIndex = 20;
             this.addNewCustButton.Text = "Add New";
             this.addNewCustButton.UseVisualStyleBackColor = true;
@@ -275,11 +277,33 @@ namespace GelatoUI
             this.orderHistButton.UseVisualStyleBackColor = true;
             this.orderHistButton.Click += new System.EventHandler(this.OrderHistButton_Click);
             // 
+            // sortAscButton
+            // 
+            this.sortAscButton.Location = new System.Drawing.Point(12, 398);
+            this.sortAscButton.Name = "sortAscButton";
+            this.sortAscButton.Size = new System.Drawing.Size(92, 23);
+            this.sortAscButton.TabIndex = 35;
+            this.sortAscButton.Text = "Sort Ascending";
+            this.sortAscButton.UseVisualStyleBackColor = true;
+            this.sortAscButton.Click += new System.EventHandler(this.SortAscButton_Click);
+            // 
+            // sortDescButton
+            // 
+            this.sortDescButton.Location = new System.Drawing.Point(110, 398);
+            this.sortDescButton.Name = "sortDescButton";
+            this.sortDescButton.Size = new System.Drawing.Size(99, 23);
+            this.sortDescButton.TabIndex = 36;
+            this.sortDescButton.Text = "Sort Descending";
+            this.sortDescButton.UseVisualStyleBackColor = true;
+            this.sortDescButton.Click += new System.EventHandler(this.SortDescButton_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sortDescButton);
+            this.Controls.Add(this.sortAscButton);
             this.Controls.Add(this.orderHistButton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -338,5 +362,7 @@ namespace GelatoUI
         private Label label10;
         private Label label11;
         private Button orderHistButton;
+        private Button sortAscButton;
+        private Button sortDescButton;
     }
 }

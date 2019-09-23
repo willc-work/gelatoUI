@@ -1,20 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GelatoDataLayer.Models
+namespace GelatoBusinessObjects
 {
-    [Table("OrderItems")]
-    public class BasketItem : IBasketItem
+    public class BasketItem
     {
-        public BasketItem()
-        {
-
-        }
-
         public BasketItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
             this.ProductNumber = productNumber;
@@ -25,7 +18,6 @@ namespace GelatoDataLayer.Models
             this.Description = description;
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductNumber { get; set; }
         public int OrderNumber { get; set; }
         public string ProductName
@@ -48,11 +40,11 @@ namespace GelatoDataLayer.Models
         }
         public decimal RecommendedRetailPrice { get; set; }
 
-        int quantity;
+        private int quantity;
         public int Quantity
         {
             get { return quantity; }
-            set
+            private set
             {
                 if (value >= 0)
                     quantity = value;

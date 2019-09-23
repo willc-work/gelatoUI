@@ -12,14 +12,16 @@ namespace GelatoDataLayer.Models
     public class Order
     {
         [Column(Order = 0), Key, ForeignKey("OrderItems")]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int OrderItemNumber { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderNumber { get; set; }
         public int CustomerNumber { get; set; }
-        public int Quantity { get; set; }
+
+        public int CustomerDiscount { get; set; }
+        public DateTime OrderDate { get; set; }
+        public decimal OrderTotalBeforeDiscount { get; set; }
         public int OrderStatus { get; set; }
 
-        public ICollection<BasketItem> OrderItems { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
 
 
     }
