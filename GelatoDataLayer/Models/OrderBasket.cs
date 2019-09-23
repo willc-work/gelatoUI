@@ -101,7 +101,7 @@ namespace GelatoDataLayer.Models
             if (!this.BasketItems.Any(x => x.ProductNumber == productNumber)) //Check that a product with the productName exists
                 return false; // False if no product found with specified name
 
-            var specifiedItem = this.BasketItems.FirstOrDefault(oItem => oItem.ProductNumber == productNumber);//LINQ query to get the first BasketItem with the specified productName. Case insensitive.
+            var specifiedItem = this.BasketItems.FirstOrDefault(x => x.ProductNumber == productNumber);//Obtain the first BasketItem based in productNumber
 
             foundItem = (BasketItem)specifiedItem;
 
