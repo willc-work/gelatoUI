@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GelatoDataLayer.Models
+namespace GelatoBusinessObjects
 {
-    public class OrderBasket
+    public class OrderBasket : IOrderBasket
     {
         public OrderBasket()
         {
@@ -18,7 +18,7 @@ namespace GelatoDataLayer.Models
             private set;
         }
 
-        /// Returns the total individual product types
+        // Returns the total individual product types
         public int NumberOfProducts
         {
             get
@@ -29,14 +29,14 @@ namespace GelatoDataLayer.Models
 
         public bool IsProductInBasket(int productNumber)
         {
-            if (this.BasketItems.Any(x => x.ProductNumber.Equals(productNumber))) //Check that a product with the productName exists
+            if (this.BasketItems.Any(x => x.ProductNumber.Equals(productNumber))) //Check that a product with the productNumber exists
                 return true; //  Product found
 
             return false;
         }
 
 
-        /// Returns total cost of all items combined
+        // Returns total cost of all items combined
         public decimal BasketTotal
         {
             get
@@ -56,9 +56,9 @@ namespace GelatoDataLayer.Models
             get
             {
                 int totalQuantity = 0;
-                foreach (BasketItem orderItem in this.BasketItems)
+                foreach (BasketItem oi in this.BasketItems)
                 {
-                    totalQuantity += orderItem.Quantity;
+                    totalQuantity += oi.Quantity;
                 }
                 return totalQuantity;
             }
@@ -78,17 +78,17 @@ namespace GelatoDataLayer.Models
             }
         }
 
-        /// removes the quantity from a product
+        // remove the quantity from a product to remove it from basket
         public void RemoveItem(int productNumber)
         {
             BasketItem specifiedItem;
             if (SearchBasketUsingProductNumber(productNumber, out specifiedItem))
             {
-                //specifiedItem.RemoveItem(specifiedItem.Quantity);
                 this.BasketItems.Remove(specifiedItem);
             }
         }
 
+        //clear the basket / remove all products
         public void ClearBasket()
         {
             this.BasketItems.Clear();

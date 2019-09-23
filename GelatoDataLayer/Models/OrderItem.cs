@@ -18,7 +18,7 @@ namespace GelatoDataLayer.Models
             this.ProductNumber = productNumber;
             this.Quantity = quantity;
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderItemNumber { get; set; }
         public int OrderNumber { get; set; }
         public int ProductNumber { get; set; }
