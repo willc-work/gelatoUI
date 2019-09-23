@@ -14,7 +14,7 @@ namespace GelatoTests
             int productNumber = 1;
             string productName = "Apfel Gelato";
             Decimal price = 5m;
-            string description = "Apple and cinamon";
+            string description = "Apple and cinnamon";
             Decimal recommendedRetailPrice = 7.2m;
             target.AddItem(productNumber, productName, price, recommendedRetailPrice, 5, description);
             Assert.IsTrue(target.IsProductInBasket(productNumber));
