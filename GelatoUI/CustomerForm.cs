@@ -114,24 +114,6 @@ public System.Collections.IComparer ListViewItemSorter { get; set; }
                 this.custListBox.SelectedIndex = selectedIndex + 1;
             }
         }
-        //search for customers in the listbox
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            ////string myString = custListBox.Text;
-            ////bool found = false;
-            ////for (int i = 0; i <= custListBox.Items.Count - 1; i++)
-            ////{
-            ////    if (custListBox.Items[i].ToString().Contains(myString))
-            ////    {
-            ////        custListBox.SetSelected(i, true);
-            ////        found = true;
-            ////        break;
-            ////    }
-            ////}
-            ////if (!found)
-            ////{
-            ////    MessageBox.Show("Customer not found. Please use the 'Add New' button to register a new customer");
-            ////}
-        }
+      
     }
 }

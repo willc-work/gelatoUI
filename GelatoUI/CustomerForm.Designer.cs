@@ -56,7 +56,6 @@ namespace GelatoUI
             this.orderHistButton = new System.Windows.Forms.Button();
             this.sortAscButton = new System.Windows.Forms.Button();
             this.sortDescButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // custNumLabel
@@ -298,20 +297,11 @@ namespace GelatoUI
             this.sortDescButton.UseVisualStyleBackColor = true;
             this.sortDescButton.Click += new System.EventHandler(this.SortDescButton_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(306, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sortDescButton);
             this.Controls.Add(this.sortAscButton);
             this.Controls.Add(this.orderHistButton);
@@ -374,6 +364,5 @@ namespace GelatoUI
         private Button orderHistButton;
         private Button sortAscButton;
         private Button sortDescButton;
-        private TextBox textBox1;
     }
 }
