@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoUI", "GelatoUI\Gelato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GelatoDataLayer", "GelatoDataLayer\GelatoDataLayer.csproj", "{496C1D4A-845B-4432-B699-80524308C5F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoTest", "GelatoTest\GelatoTest.csproj", "{ECD4BFDE-B68F-444A-862A-B60AE79B871C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoTests", "GelatoTest\GelatoTests.csproj", "{ECD4BFDE-B68F-444A-862A-B60AE79B871C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

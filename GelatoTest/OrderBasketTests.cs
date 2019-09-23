@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GelatoDataLayer.Models;
 
-namespace GelatoTest
+namespace GelatoTests
 {
     [TestClass]
     public class OrderBasketTests
