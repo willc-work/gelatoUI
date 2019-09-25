@@ -41,18 +41,18 @@ namespace GelatoUI
             this.secAnswerLabek = new System.Windows.Forms.Label();
             this.addNewCustButton = new System.Windows.Forms.Button();
             this.custListBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.showCustName = new System.Windows.Forms.Label();
+            this.showCustNum = new System.Windows.Forms.Label();
+            this.showCustPCode = new System.Windows.Forms.Label();
+            this.showCustAdd1 = new System.Windows.Forms.Label();
+            this.showCustPhone = new System.Windows.Forms.Label();
+            this.showCustEmail = new System.Windows.Forms.Label();
+            this.showCustDisc = new System.Windows.Forms.Label();
+            this.showCustSQ = new System.Windows.Forms.Label();
+            this.showCustSA = new System.Windows.Forms.Label();
             this.takeNewOrderButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.showCustAdd2 = new System.Windows.Forms.Label();
+            this.showCustAdd3 = new System.Windows.Forms.Label();
             this.orderHistButton = new System.Windows.Forms.Button();
             this.sortAscButton = new System.Windows.Forms.Button();
             this.sortDescButton = new System.Windows.Forms.Button();
@@ -160,84 +160,84 @@ namespace GelatoUI
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(537, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "label1";
+            this.showCustName.AutoSize = true;
+            this.showCustName.Location = new System.Drawing.Point(537, 25);
+            this.showCustName.Name = "label1";
+            this.showCustName.Size = new System.Drawing.Size(35, 13);
+            this.showCustName.TabIndex = 23;
+            this.showCustName.Text = "label1";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(537, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "label2";
+            this.showCustNum.AutoSize = true;
+            this.showCustNum.Location = new System.Drawing.Point(537, 62);
+            this.showCustNum.Name = "label2";
+            this.showCustNum.Size = new System.Drawing.Size(35, 13);
+            this.showCustNum.TabIndex = 24;
+            this.showCustNum.Text = "label2";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(537, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "label3";
+            this.showCustPCode.AutoSize = true;
+            this.showCustPCode.Location = new System.Drawing.Point(537, 203);
+            this.showCustPCode.Name = "label3";
+            this.showCustPCode.Size = new System.Drawing.Size(35, 13);
+            this.showCustPCode.TabIndex = 25;
+            this.showCustPCode.Text = "label3";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(537, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "label3";
+            this.showCustAdd1.AutoSize = true;
+            this.showCustAdd1.Location = new System.Drawing.Point(537, 97);
+            this.showCustAdd1.Name = "label4";
+            this.showCustAdd1.Size = new System.Drawing.Size(35, 13);
+            this.showCustAdd1.TabIndex = 25;
+            this.showCustAdd1.Text = "label3";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(537, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "label5";
+            this.showCustPhone.AutoSize = true;
+            this.showCustPhone.Location = new System.Drawing.Point(537, 237);
+            this.showCustPhone.Name = "label5";
+            this.showCustPhone.Size = new System.Drawing.Size(35, 13);
+            this.showCustPhone.TabIndex = 26;
+            this.showCustPhone.Text = "label5";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(537, 275);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "label6";
+            this.showCustEmail.AutoSize = true;
+            this.showCustEmail.Location = new System.Drawing.Point(537, 275);
+            this.showCustEmail.Name = "label6";
+            this.showCustEmail.Size = new System.Drawing.Size(35, 13);
+            this.showCustEmail.TabIndex = 27;
+            this.showCustEmail.Text = "label6";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(537, 307);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "label7";
+            this.showCustDisc.AutoSize = true;
+            this.showCustDisc.Location = new System.Drawing.Point(537, 307);
+            this.showCustDisc.Name = "label7";
+            this.showCustDisc.Size = new System.Drawing.Size(35, 13);
+            this.showCustDisc.TabIndex = 28;
+            this.showCustDisc.Text = "label7";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(537, 340);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "label8";
+            this.showCustSQ.AutoSize = true;
+            this.showCustSQ.Location = new System.Drawing.Point(537, 340);
+            this.showCustSQ.Name = "label8";
+            this.showCustSQ.Size = new System.Drawing.Size(35, 13);
+            this.showCustSQ.TabIndex = 29;
+            this.showCustSQ.Text = "label8";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(537, 367);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "label9";
+            this.showCustSA.AutoSize = true;
+            this.showCustSA.Location = new System.Drawing.Point(537, 367);
+            this.showCustSA.Name = "label9";
+            this.showCustSA.Size = new System.Drawing.Size(35, 13);
+            this.showCustSA.TabIndex = 30;
+            this.showCustSA.Text = "label9";
             // 
             // takeNewOrderButton
             // 
@@ -251,21 +251,21 @@ namespace GelatoUI
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(537, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "label10";
+            this.showCustAdd2.AutoSize = true;
+            this.showCustAdd2.Location = new System.Drawing.Point(537, 134);
+            this.showCustAdd2.Name = "label10";
+            this.showCustAdd2.Size = new System.Drawing.Size(41, 13);
+            this.showCustAdd2.TabIndex = 32;
+            this.showCustAdd2.Text = "label10";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(537, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "label11";
+            this.showCustAdd3.AutoSize = true;
+            this.showCustAdd3.Location = new System.Drawing.Point(537, 171);
+            this.showCustAdd3.Name = "label11";
+            this.showCustAdd3.Size = new System.Drawing.Size(41, 13);
+            this.showCustAdd3.TabIndex = 33;
+            this.showCustAdd3.Text = "label11";
             // 
             // orderHistButton
             // 
@@ -305,18 +305,18 @@ namespace GelatoUI
             this.Controls.Add(this.sortDescButton);
             this.Controls.Add(this.sortAscButton);
             this.Controls.Add(this.orderHistButton);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.showCustAdd3);
+            this.Controls.Add(this.showCustAdd2);
             this.Controls.Add(this.takeNewOrderButton);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.showCustSA);
+            this.Controls.Add(this.showCustSQ);
+            this.Controls.Add(this.showCustDisc);
+            this.Controls.Add(this.showCustEmail);
+            this.Controls.Add(this.showCustPhone);
+            this.Controls.Add(this.showCustAdd1);
+            this.Controls.Add(this.showCustPCode);
+            this.Controls.Add(this.showCustNum);
+            this.Controls.Add(this.showCustName);
             this.Controls.Add(this.custListBox);
             this.Controls.Add(this.addNewCustButton);
             this.Controls.Add(this.secAnswerLabek);
@@ -349,18 +349,18 @@ namespace GelatoUI
         private System.Windows.Forms.Label secAnswerLabek;
         private Button addNewCustButton;
         private ListBox custListBox;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
+        private Label showCustName;
+        private Label showCustNum;
+        private Label showCustPCode;
+        private Label showCustAdd1;
+        private Label showCustPhone;
+        private Label showCustEmail;
+        private Label showCustDisc;
+        private Label showCustSQ;
+        private Label showCustSA;
         private Button takeNewOrderButton;
-        private Label label10;
-        private Label label11;
+        private Label showCustAdd2;
+        private Label showCustAdd3;
         private Button orderHistButton;
         private Button sortAscButton;
         private Button sortDescButton;

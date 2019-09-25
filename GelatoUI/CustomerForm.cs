@@ -37,32 +37,29 @@ namespace GelatoUI
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Customer> cl = db.Customers.ToList();
             custListBox.DataSource = cl;
             custListBox.DisplayMember ="CustomerName";
             takeNewOrderButton.Enabled = false;
             orderHistButton.Enabled = false;
-
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //populate the page with customer details
             Customer customer = (Customer)custListBox.SelectedItem;
-            label1.Text = customer.CustomerNumber.ToString();
-            label2.Text = customer.CustomerName;
-            label4.Text = customer.AddressLine1;
-            label4.Text = customer.AddressLine1;
-            label10.Text = customer.AddressLine2;
-            label11.Text = customer.AddressLine3;
-            label3.Text = customer.Postcode;
-            label5.Text = customer.Phone;
-            label6.Text = customer.Email;
-            label7.Text = customer.Discount.ToString();
-            label8.Text = customer.SecurityQuestion;
-            label9.Text = customer.SecurityQuestionAnswer;
+            showCustName.Text = customer.CustomerNumber.ToString();
+            showCustNum.Text = customer.CustomerName;
+            showCustAdd1.Text = customer.AddressLine1;
+            showCustAdd2.Text = customer.AddressLine2;
+            showCustAdd3.Text = customer.AddressLine3;
+            showCustPCode.Text = customer.Postcode;
+            showCustPhone.Text = customer.Phone;
+            showCustEmail.Text = customer.Email;
+            showCustDisc.Text = customer.Discount.ToString();
+            showCustSQ.Text = customer.SecurityQuestion;
+            showCustSA.Text = customer.SecurityQuestionAnswer;
             takeNewOrderButton.Enabled = true;
             orderHistButton.Enabled = true;
             custListBox.Sorted = true;
@@ -111,6 +108,6 @@ namespace GelatoUI
                 this.custListBox.SelectedIndex = selectedIndex + 1;
             }
         }
-      
+
     }
 }
