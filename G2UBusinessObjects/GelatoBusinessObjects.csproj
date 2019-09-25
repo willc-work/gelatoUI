@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasketItem.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="IOrderBasket.cs" />
     <Compile Include="OrderBasket.cs" />
     <Compile Include="OrderItemFactory.cs" />

@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Models\G2UCustomer.cs" />
     <Compile Include="Models\G2UProduct.cs" />
     <Compile Include="Models\IOrderItem.cs" />
