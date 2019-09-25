@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoUI", "GelatoUI\GelatoUI.csproj", "{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GelatoDataLayer", "GelatoDataLayer\GelatoDataLayer.csproj", "{496C1D4A-845B-4432-B699-80524308C5F8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoTests", "GelatoTest\GelatoTests.csproj", "{ECD4BFDE-B68F-444A-862A-B60AE79B871C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoBusinessObjects", "Gelato2UBusinessObjects\GelatoBusinessObjects.csproj", "{7C491DEB-BD14-411B-9AC4-4C95E4E9509B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoDataLayer", "Gelato2UDataLayer\GelatoDataLayer.csproj", "{360BE9ED-C21C-4440-A76B-A0F8A9345B79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelatoBusinessObjects", "G2UBusinessObjects\GelatoBusinessObjects.csproj", "{7437FBEA-2DC6-4D84-B41F-28C46A5A4B47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BCED207-555A-4F7D-A2F9-0C4E3AF3A02E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{496C1D4A-845B-4432-B699-80524308C5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{496C1D4A-845B-4432-B699-80524308C5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{496C1D4A-845B-4432-B699-80524308C5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{496C1D4A-845B-4432-B699-80524308C5F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECD4BFDE-B68F-444A-862A-B60AE79B871C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECD4BFDE-B68F-444A-862A-B60AE79B871C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD4BFDE-B68F-444A-862A-B60AE79B871C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD4BFDE-B68F-444A-862A-B60AE79B871C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C491DEB-BD14-411B-9AC4-4C95E4E9509B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C491DEB-BD14-411B-9AC4-4C95E4E9509B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C491DEB-BD14-411B-9AC4-4C95E4E9509B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C491DEB-BD14-411B-9AC4-4C95E4E9509B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360BE9ED-C21C-4440-A76B-A0F8A9345B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360BE9ED-C21C-4440-A76B-A0F8A9345B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360BE9ED-C21C-4440-A76B-A0F8A9345B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360BE9ED-C21C-4440-A76B-A0F8A9345B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7437FBEA-2DC6-4D84-B41F-28C46A5A4B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7437FBEA-2DC6-4D84-B41F-28C46A5A4B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7437FBEA-2DC6-4D84-B41F-28C46A5A4B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7437FBEA-2DC6-4D84-B41F-28C46A5A4B47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
