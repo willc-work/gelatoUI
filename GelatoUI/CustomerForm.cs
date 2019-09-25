@@ -49,8 +49,8 @@ namespace GelatoUI
         {
             //populate the page with customer details
             Customer customer = (Customer)custListBox.SelectedItem;
-            showCustName.Text = customer.CustomerNumber.ToString();
-            showCustNum.Text = customer.CustomerName;
+            showCustNum.Text = customer.CustomerNumber.ToString();
+            showCustName.Text = customer.CustomerName;
             showCustAdd1.Text = customer.AddressLine1;
             showCustAdd2.Text = customer.AddressLine2;
             showCustAdd3.Text = customer.AddressLine3;

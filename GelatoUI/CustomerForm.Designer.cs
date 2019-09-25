@@ -41,8 +41,8 @@ namespace GelatoUI
             this.secAnswerLabek = new System.Windows.Forms.Label();
             this.addNewCustButton = new System.Windows.Forms.Button();
             this.custListBox = new System.Windows.Forms.ListBox();
-            this.showCustName = new System.Windows.Forms.Label();
             this.showCustNum = new System.Windows.Forms.Label();
+            this.showCustName = new System.Windows.Forms.Label();
             this.showCustPCode = new System.Windows.Forms.Label();
             this.showCustAdd1 = new System.Windows.Forms.Label();
             this.showCustPhone = new System.Windows.Forms.Label();
@@ -158,83 +158,83 @@ namespace GelatoUI
             this.custListBox.TabIndex = 22;
             this.custListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.showCustName.AutoSize = true;
-            this.showCustName.Location = new System.Drawing.Point(537, 25);
-            this.showCustName.Name = "label1";
-            this.showCustName.Size = new System.Drawing.Size(35, 13);
-            this.showCustName.TabIndex = 23;
-            this.showCustName.Text = "label1";
-            // 
-            // label2
+            // showCustNum
             // 
             this.showCustNum.AutoSize = true;
-            this.showCustNum.Location = new System.Drawing.Point(537, 62);
-            this.showCustNum.Name = "label2";
+            this.showCustNum.Location = new System.Drawing.Point(431, 25);
+            this.showCustNum.Name = "showCustNum";
             this.showCustNum.Size = new System.Drawing.Size(35, 13);
-            this.showCustNum.TabIndex = 24;
-            this.showCustNum.Text = "label2";
+            this.showCustNum.TabIndex = 23;
+            this.showCustNum.Text = "label1";
             // 
-            // label3
+            // showCustName
+            // 
+            this.showCustName.AutoSize = true;
+            this.showCustName.Location = new System.Drawing.Point(431, 53);
+            this.showCustName.Name = "showCustName";
+            this.showCustName.Size = new System.Drawing.Size(35, 13);
+            this.showCustName.TabIndex = 24;
+            this.showCustName.Text = "label2";
+            // 
+            // showCustPCode
             // 
             this.showCustPCode.AutoSize = true;
-            this.showCustPCode.Location = new System.Drawing.Point(537, 203);
-            this.showCustPCode.Name = "label3";
+            this.showCustPCode.Location = new System.Drawing.Point(431, 203);
+            this.showCustPCode.Name = "showCustPCode";
             this.showCustPCode.Size = new System.Drawing.Size(35, 13);
             this.showCustPCode.TabIndex = 25;
             this.showCustPCode.Text = "label3";
             // 
-            // label4
+            // showCustAdd1
             // 
             this.showCustAdd1.AutoSize = true;
-            this.showCustAdd1.Location = new System.Drawing.Point(537, 97);
-            this.showCustAdd1.Name = "label4";
+            this.showCustAdd1.Location = new System.Drawing.Point(431, 97);
+            this.showCustAdd1.Name = "showCustAdd1";
             this.showCustAdd1.Size = new System.Drawing.Size(35, 13);
             this.showCustAdd1.TabIndex = 25;
             this.showCustAdd1.Text = "label3";
             // 
-            // label5
+            // showCustPhone
             // 
             this.showCustPhone.AutoSize = true;
-            this.showCustPhone.Location = new System.Drawing.Point(537, 237);
-            this.showCustPhone.Name = "label5";
+            this.showCustPhone.Location = new System.Drawing.Point(431, 248);
+            this.showCustPhone.Name = "showCustPhone";
             this.showCustPhone.Size = new System.Drawing.Size(35, 13);
             this.showCustPhone.TabIndex = 26;
             this.showCustPhone.Text = "label5";
             // 
-            // label6
+            // showCustEmail
             // 
             this.showCustEmail.AutoSize = true;
-            this.showCustEmail.Location = new System.Drawing.Point(537, 275);
-            this.showCustEmail.Name = "label6";
+            this.showCustEmail.Location = new System.Drawing.Point(431, 275);
+            this.showCustEmail.Name = "showCustEmail";
             this.showCustEmail.Size = new System.Drawing.Size(35, 13);
             this.showCustEmail.TabIndex = 27;
             this.showCustEmail.Text = "label6";
             // 
-            // label7
+            // showCustDisc
             // 
             this.showCustDisc.AutoSize = true;
-            this.showCustDisc.Location = new System.Drawing.Point(537, 307);
-            this.showCustDisc.Name = "label7";
+            this.showCustDisc.Location = new System.Drawing.Point(431, 307);
+            this.showCustDisc.Name = "showCustDisc";
             this.showCustDisc.Size = new System.Drawing.Size(35, 13);
             this.showCustDisc.TabIndex = 28;
             this.showCustDisc.Text = "label7";
             // 
-            // label8
+            // showCustSQ
             // 
             this.showCustSQ.AutoSize = true;
-            this.showCustSQ.Location = new System.Drawing.Point(537, 340);
-            this.showCustSQ.Name = "label8";
+            this.showCustSQ.Location = new System.Drawing.Point(431, 340);
+            this.showCustSQ.Name = "showCustSQ";
             this.showCustSQ.Size = new System.Drawing.Size(35, 13);
             this.showCustSQ.TabIndex = 29;
             this.showCustSQ.Text = "label8";
             // 
-            // label9
+            // showCustSA
             // 
             this.showCustSA.AutoSize = true;
-            this.showCustSA.Location = new System.Drawing.Point(537, 367);
-            this.showCustSA.Name = "label9";
+            this.showCustSA.Location = new System.Drawing.Point(431, 367);
+            this.showCustSA.Name = "showCustSA";
             this.showCustSA.Size = new System.Drawing.Size(35, 13);
             this.showCustSA.TabIndex = 30;
             this.showCustSA.Text = "label9";
@@ -249,20 +249,20 @@ namespace GelatoUI
             this.takeNewOrderButton.UseVisualStyleBackColor = true;
             this.takeNewOrderButton.Click += new System.EventHandler(this.TakeNewOrderButton_Click_1);
             // 
-            // label10
+            // showCustAdd2
             // 
             this.showCustAdd2.AutoSize = true;
-            this.showCustAdd2.Location = new System.Drawing.Point(537, 134);
-            this.showCustAdd2.Name = "label10";
+            this.showCustAdd2.Location = new System.Drawing.Point(431, 135);
+            this.showCustAdd2.Name = "showCustAdd2";
             this.showCustAdd2.Size = new System.Drawing.Size(41, 13);
             this.showCustAdd2.TabIndex = 32;
             this.showCustAdd2.Text = "label10";
             // 
-            // label11
+            // showCustAdd3
             // 
             this.showCustAdd3.AutoSize = true;
-            this.showCustAdd3.Location = new System.Drawing.Point(537, 171);
-            this.showCustAdd3.Name = "label11";
+            this.showCustAdd3.Location = new System.Drawing.Point(431, 169);
+            this.showCustAdd3.Name = "showCustAdd3";
             this.showCustAdd3.Size = new System.Drawing.Size(41, 13);
             this.showCustAdd3.TabIndex = 33;
             this.showCustAdd3.Text = "label11";
@@ -315,8 +315,8 @@ namespace GelatoUI
             this.Controls.Add(this.showCustPhone);
             this.Controls.Add(this.showCustAdd1);
             this.Controls.Add(this.showCustPCode);
-            this.Controls.Add(this.showCustNum);
             this.Controls.Add(this.showCustName);
+            this.Controls.Add(this.showCustNum);
             this.Controls.Add(this.custListBox);
             this.Controls.Add(this.addNewCustButton);
             this.Controls.Add(this.secAnswerLabek);
@@ -349,8 +349,8 @@ namespace GelatoUI
         private System.Windows.Forms.Label secAnswerLabek;
         private Button addNewCustButton;
         private ListBox custListBox;
-        private Label showCustName;
         private Label showCustNum;
+        private Label showCustName;
         private Label showCustPCode;
         private Label showCustAdd1;
         private Label showCustPhone;
