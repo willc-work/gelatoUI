@@ -84,6 +84,7 @@
             this.orderHistoryListView.TabIndex = 13;
             this.orderHistoryListView.UseCompatibleStateImageBehavior = false;
             this.orderHistoryListView.View = System.Windows.Forms.View.Details;
+        
             // 
             // orderNumber
             // 

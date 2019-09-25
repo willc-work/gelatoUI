@@ -39,8 +39,8 @@ namespace GelatoUI
                 });
 
                 orderHistoryListView.Items.Add(item);
+                orderHistoryListView.FullRowSelect = true;
             }
-            
         }
 
         private void getOrderDetails()
@@ -76,11 +76,13 @@ namespace GelatoUI
             getOrderDetails();
         }
 
+
         private void ReturnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
             CustomerForm cf = new CustomerForm();
             cf.Show();
         }
+
     }
 }

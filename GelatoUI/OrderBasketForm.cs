@@ -79,7 +79,7 @@ namespace GelatoUI
         {
             //view the current contents of the basket and enable buttons when popualated
             basketListView.Items.Clear();
-
+            basketListView.FullRowSelect = true;
             numOfItems.Text = ob.NumberOfItems.ToString();
             numOfProducts.Text = ob.NumberOfProducts.ToString();
             totalBox.Text = string.Format("{0:C2}", ob.BasketTotal);
