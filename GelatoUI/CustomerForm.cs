@@ -20,6 +20,8 @@ namespace GelatoUI
         public CustomerForm()
         {
             InitializeComponent();
+            sortDescButton.Enabled = false;
+            sortAscButton.Enabled = false;
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -80,33 +82,34 @@ namespace GelatoUI
             this.Hide();
         }
 
+        // add a way for the user to sort the customer list in ascending and descending order
         private void SortAscButton_Click(object sender, EventArgs e)
         {
-            if (this.custListBox.SelectedIndex > 0)
-            {
-                int selectedIndex = this.custListBox.SelectedIndex;
-                object selectedItem = this.custListBox.SelectedItem;
+            //if (custListBox.SelectedIndex > 0)
+            //{
+            //    int selectedIndex = custListBox.SelectedIndex;
+            //    object selectedItem = custListBox.SelectedItem;
 
-                this.custListBox.Items.RemoveAt(selectedIndex);
-                this.custListBox.Items.Insert(selectedIndex - 1, selectedItem);
+            //    custListBox.Items.RemoveAt(selectedIndex);
+            //    custListBox.Items.Insert(selectedIndex - 1, selectedItem);
 
-                this.custListBox.SelectedIndex = selectedIndex - 1;
-            }
+            //    custListBox.SelectedIndex = selectedIndex - 1;
+            //}
         }
 
         private void SortDescButton_Click(object sender, EventArgs e)
         {
-            if (this.custListBox.SelectedIndex > -1 &&
-            this.custListBox.SelectedIndex < this.custListBox.Items.Count - 1)
-            {
-                int selectedIndex = this.custListBox.SelectedIndex;
-                object selectedItem = this.custListBox.SelectedItem;
+            //if (custListBox.SelectedIndex > -1 &&
+            //custListBox.SelectedIndex < custListBox.Items.Count - 1)
+            //{
+            //    int selectedIndex = custListBox.SelectedIndex;
+            //    object selectedItem = custListBox.SelectedItem;
 
-                this.custListBox.Items.RemoveAt(selectedIndex);
-                this.custListBox.Items.Insert(selectedIndex + 1, selectedItem);
+            //    custListBox.Items.RemoveAt(selectedIndex);
+            //    custListBox.Items.Insert(selectedIndex + 1, selectedItem);
 
-                this.custListBox.SelectedIndex = selectedIndex + 1;
-            }
+            //    custListBox.SelectedIndex = selectedIndex + 1;
+            //}
         }
 
     }
