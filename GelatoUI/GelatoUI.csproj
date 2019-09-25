@@ -166,12 +166,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gelato2UBusinessObjects\GelatoBusinessObjects.csproj">
-      <Project>{7c491deb-bd14-411b-9ac4-4c95e4e9509b}</Project>
+    <ProjectReference Include="..\G2UBusinessObjects\GelatoBusinessObjects.csproj">
+      <Project>{7437fbea-2dc6-4d84-b41f-28c46a5a4b47}</Project>
       <Name>GelatoBusinessObjects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GelatoDataLayer\GelatoDataLayer.csproj">
-      <Project>{496c1d4a-845b-4432-b699-80524308c5f8}</Project>
+    <ProjectReference Include="..\Gelato2UDataLayer\GelatoDataLayer.csproj">
+      <Project>{360be9ed-c21c-4440-a76b-a0f8a9345b79}</Project>
       <Name>GelatoDataLayer</Name>
     </ProjectReference>
   </ItemGroup>

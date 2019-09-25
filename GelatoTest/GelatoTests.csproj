@@ -57,8 +57,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gelato2UBusinessObjects\GelatoBusinessObjects.csproj">
-      <Project>{7c491deb-bd14-411b-9ac4-4c95e4e9509b}</Project>
+    <ProjectReference Include="..\G2UBusinessObjects\GelatoBusinessObjects.csproj">
+      <Project>{7437fbea-2dc6-4d84-b41f-28c46a5a4b47}</Project>
       <Name>GelatoBusinessObjects</Name>
     </ProjectReference>
   </ItemGroup>

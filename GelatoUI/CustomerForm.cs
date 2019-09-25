@@ -22,9 +22,6 @@ namespace GelatoUI
             InitializeComponent();
         }
 
-        [System.ComponentModel.Browsable(false)]
-public System.Collections.IComparer ListViewItemSorter { get; set; }
-
         private void ClearButton_Click(object sender, EventArgs e)
         {
             custListBox.ClearSelected();
