@@ -285,7 +285,6 @@ namespace GelatoUI
             this.sortAscButton.TabIndex = 35;
             this.sortAscButton.Text = "Sort Ascending";
             this.sortAscButton.UseVisualStyleBackColor = true;
-            this.sortAscButton.Click += new System.EventHandler(this.SortAscButton_Click);
             // 
             // sortDescButton
             // 
@@ -295,7 +294,6 @@ namespace GelatoUI
             this.sortDescButton.TabIndex = 36;
             this.sortDescButton.Text = "Sort Descending";
             this.sortDescButton.UseVisualStyleBackColor = true;
-            this.sortDescButton.Click += new System.EventHandler(this.SortDescButton_Click);
             // 
             // CustomerForm
             // 
