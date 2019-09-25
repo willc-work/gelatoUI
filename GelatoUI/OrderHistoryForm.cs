@@ -24,21 +24,51 @@ namespace GelatoUI
         private void getOrders()
         {
             //retrieve orders to populate the listview
+            string statusText = "";
             Gelato2UEntitiesA db = new Gelato2UEntitiesA();
             List<Order> orders = db.Orders.Where(x=>x.CustomerNumber==CurrentCustomer.CustomerNumber).ToList();
+
             foreach (Order order in orders)
-            {
-                ListViewItem item = new ListViewItem(new[]
+
+                if (order.OrderStatus == 1)
                 {
+                    ListViewItem item = new ListViewItem(new[]
+                    {
                     order.OrderNumber.ToString(),
                     order.OrderDate.ToLongDateString(),
-                    order.OrderStatus.ToString(),
+                    statusText = "Taken",
                     order.CustomerDiscount.ToString(),
                     order.OrderTotalBeforeDiscount.ToString("C2"),
                     order.OrderTotalBeforeDiscount.ToString("C2")
                 });
+                    orderHistoryListView.Items.Add(item);
+                }
+                else
+                {
+                    ListViewItem item = new ListViewItem(new[]
+                    {
+                    order.OrderNumber.ToString(),
+                    order.OrderDate.ToLongDateString(),
+                    statusText = "Dispatched",
+                    order.CustomerDiscount.ToString(),
+                    order.OrderTotalBeforeDiscount.ToString("C2"),
+                    order.OrderTotalBeforeDiscount.ToString("C2")
+                });
+                    orderHistoryListView.Items.Add(item);
+                }
+            {
+                //ListViewItem item = new ListViewItem(new[]
 
-                orderHistoryListView.Items.Add(item);
+                //{
+                //    order.OrderNumber.ToString(),
+                //    order.OrderDate.ToLongDateString(),
+                //    statusText,
+                //    order.CustomerDiscount.ToString(),
+                //    order.OrderTotalBeforeDiscount.ToString("C2"),
+                //    order.OrderTotalBeforeDiscount.ToString("C2")
+                //});
+
+               // orderHistoryListView.Items.Add(item);
                 orderHistoryListView.FullRowSelect = true;
             }
         }
