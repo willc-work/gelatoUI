@@ -190,6 +190,7 @@ namespace GelatoUI
             //save changes to db
             db.Orders.Add(order);
             db.SaveChanges();
+            MessageBox.Show("The order has been successfully confirmed");
 
             OrderHistoryForm ohf = new OrderHistoryForm(cust);
             ohf.Show();
