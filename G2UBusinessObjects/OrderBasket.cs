@@ -63,7 +63,7 @@ namespace GelatoBusinessObjects
                 return totalQuantity;
             }
         }
-
+        // Add an item to the basket
         public void AddItem(int productNumber, string productName, decimal price, decimal recommendedRetailPrice, int quantity, string description)
         {
             BasketItem basketItem;

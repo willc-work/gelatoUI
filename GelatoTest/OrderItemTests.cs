@@ -15,8 +15,8 @@ namespace GelatoTests
         //    int productNumber = 88;
         //    int orderNumber = 88;
         //    int quantity = 1;
-        //    IOrderItem target = new OrderItem(productNumber, orderNumber, quantity);
-        //    Assert.AreEqual(2.49m, target.TotalValueOfBasketItem);
+        //    IOrderItem subject = new OrderItem(productNumber, orderNumber, quantity);
+        //    Assert.AreEqual(2.49m, subject.TotalValueOfBasketItem);
         //}
 
         //[TestMethod()]
@@ -24,9 +24,9 @@ namespace GelatoTests
         //{
         //    int productNumber = 8;
         //    Decimal price = 5.50m;
-        //    IOrderItem target = new OrderItem(productNumber, price, 2);
+        //    IOrderItem subject = new OrderItem(productNumber, price, 2);
         //    int expected = 3; //Default 1 + added 1
-        //    int actual = target.AddItem();
+        //    int actual = subject.AddItem();
         //    Assert.AreEqual(expected, actual);
         //}
     }
