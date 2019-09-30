@@ -7,12 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GelatoDataLayer.Models
-    {
-       [Table("Products")]
+{     // not in use - issues with overridign the conection to the Product model created by the IDE
+    [Table("Products")]
 
         public partial class G2UProduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        
         public G2UProduct()
         {
             this.OrderItems = new HashSet<OrderItem>();
@@ -24,7 +24,6 @@ namespace GelatoDataLayer.Models
         public decimal Price { get; set; }
         public decimal RecommendedRetailPrice { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

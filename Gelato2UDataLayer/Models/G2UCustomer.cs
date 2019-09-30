@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GelatoDataLayer.Models
 {
+    // not in use - issues with overridign the conection to the Customer model created by the IDE
     [Table("Customers")]
     public class G2UCustomer
     {

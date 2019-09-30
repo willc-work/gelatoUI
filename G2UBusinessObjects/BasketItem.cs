@@ -41,6 +41,8 @@ namespace GelatoBusinessObjects
         public decimal RecommendedRetailPrice { get; set; }
 
         private int quantity;
+
+        //quantity should always be greater than 1
         public int Quantity
         {
             get { return quantity; }
@@ -58,6 +60,7 @@ namespace GelatoBusinessObjects
                 return Price * quantity;
             }
         }
+        // add extra item(s) of the same type without creating a new entry in the list
         public int IncreaseQuantity(int quantity)
         {
             return Quantity += quantity;
